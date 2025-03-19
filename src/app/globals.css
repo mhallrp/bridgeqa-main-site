@@ -24,6 +24,10 @@ body {
   color: var(--color-light);
 }
 
+.text-bridgeBlue {
+  color: var(--color-bridgeBlue);
+}
+
 .bg-bridgeBlue {
   background-color: var(--color-bridgeBlue);
 }

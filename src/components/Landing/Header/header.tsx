@@ -21,7 +21,7 @@ const Header = () => {
                     </button>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-5 text-sm font-semibold mt-30 px-8">
+                <div className="flex flex-wrap justify-center gap-5 text-sm font-semibold mt-30 px-8 pb-6">
                     <p className="px-4 py-2 text-white bg-[linear-gradient(to_right,_#0090FF_0%,_#7D00FF_86%,_#A600FF_100%)] rounded-lg">
                         🎯 Compare Figma & Live Site Instantly
                     </p>
