@@ -7,7 +7,7 @@ const Footer = () => {
                         <span className="cursor-pointer">How it works</span>
                     </button>
                     <button>
-                        <span className="cursor-pointer">Who it's for</span>
+                        <span className="cursor-pointer">Who it&apos;s for</span>
                     </button>
                     <button>
                         <span className="cursor-pointer">Blog</span>

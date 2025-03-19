@@ -84,7 +84,7 @@ const NavBar = () => {
                         <span className="text-sm font-bold cursor-pointer">How it works</span>
                         </button>
                         <button className="px-8">
-                        <span className="text-sm font-bold cursor-pointer">Who it's for</span>
+                        <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
                         </button>
                     <button className="px-8">
                         <span className="text-sm font-bold cursor-pointer">Blog</span>
@@ -111,7 +111,7 @@ const NavBar = () => {
                         { isMenuOpen ? <MdClose size={24} /> : <FiMenu size={24} /> }
                     </button>
                 </div>
-                {isMenuOpen && <NavMenu scrollTo={handleNavigationAndScroll} ref={menuRef} />}
+                {isMenuOpen && <NavMenu ref={menuRef} />}
             </div>
         </div>
     );
