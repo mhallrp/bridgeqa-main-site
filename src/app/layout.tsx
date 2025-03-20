@@ -15,7 +15,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Bridge QA",
+  title: "BridgeQA",
   description: "",
 };
 
