@@ -1,7 +1,7 @@
 const Header = () => {
     return (
         <div className="flex w-full justify-center text-center">
-            <div className="pt-[120px]">
+            <div className="pt-30">
                 <h1 className="font-montserrat font-black text-[40px]">
                     <span className="mr-1">Stop Losing Sleep Over</span>
                     <span className="bg-gradient-to-r from-[#0090FF] via-[#7D00FF] to-[#A600FF] bg-clip-text text-transparent mx-1">

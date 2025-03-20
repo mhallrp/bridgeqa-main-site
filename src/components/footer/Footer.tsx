@@ -5,9 +5,11 @@ const Footer = () => {
         <div className="flex w-full py-14 bg-[#0090FF] justify-center px-8">
             <div className="flex flex-row h-full max-w-[1216px] w-full justify-between items-between text-white">
                 <div className="flex flex-col gap-2.5 font-bold w-full items-start hidden lg:flex">
-                    <button>
-                        <span className="cursor-pointer">How it works</span>
-                    </button>
+                    <Link href="/how-it-works">
+                        <button>
+                            <span className="cursor-pointer">How it works</span>
+                        </button>
+                    </Link>
                     <Link href="/who-its-for">
                         <button>
                             <span className="cursor-pointer">Who it&apos;s for</span>
@@ -16,6 +18,7 @@ const Footer = () => {
                     <button>
                         <span className="cursor-pointer">Contact us</span>
                     </button>
+
                     <p className="mt-8">
                         © {new Date().getFullYear()} BridgeQA. All rights reserved.
                     </p>

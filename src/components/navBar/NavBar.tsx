@@ -5,9 +5,10 @@ import { MdClose } from "react-icons/md";
 import NavMenu from "./navMenu";
 
 import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 
 const NavBar = () => {
-    
+
     const router = useRouter();
     const pathname = usePathname(); // Get current path
     const menuRef = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ const NavBar = () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
-    
+
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -76,18 +77,22 @@ const NavBar = () => {
                 <div className="flex w-full items-center justify-between">
                     <button onClick={() => handleNavigationAndScroll("top")} className="cursor-pointer">
 
-                            <img src="/bridgeQAIcon.png" alt="icon" className="h-[40px]"/>
+                        <img src="/bridgeQAIcon.png" alt="icon" className="h-[40px]" />
 
                     </button>
-                    <div>
-                    <button className="px-8">
-                        <span className="text-sm font-bold cursor-pointer">How it works</span>
+                    <div className="flex gap-8 items-center">
+                        <Link href="/how-it-works">
+                            <button >
+                                <span className="text-sm font-bold cursor-pointer">How it works</span>
+                            </button>
+                        </Link>
+                        <Link href="/who-its-for">
+                        <button >
+                            <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
                         </button>
-                        <button className="px-8">
-                        <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
-                        </button>
+                        </Link>
                         <button className="bg-bridgeBlue py-2 px-6 rounded cursor-pointer">
-                        <span className="text-sm font-semibold text-white">Request early access</span>
+                            <span className="text-sm font-semibold text-white">Request early access</span>
                         </button>
                     </div>
                 </div>
@@ -96,8 +101,8 @@ const NavBar = () => {
             {/* Burger menu */}
             <div className="flex lg:hidden w-full flex-col">
                 <div className="flex h-auto py-5 pl-16 items-center justify-center">
-                <button onClick={() => handleNavigationAndScroll("top")}>
-                        <img src="/bridgeQAIcon.png" alt="icon" className="h-[40px]"/>
+                    <button onClick={() => handleNavigationAndScroll("top")}>
+                        <img src="/bridgeQAIcon.png" alt="icon" className="h-[40px]" />
                     </button>
 
                     <div className="flex-1" />
@@ -105,7 +110,7 @@ const NavBar = () => {
                         onClick={toggleMenu}
                         className="mr-auto h-10 text-secondary pr-16"
                     >
-                        { isMenuOpen ? <MdClose size={24} /> : <FiMenu size={24} /> }
+                        {isMenuOpen ? <MdClose size={24} /> : <FiMenu size={24} />}
                     </button>
                 </div>
                 {isMenuOpen && <NavMenu ref={menuRef} />}
