@@ -1,9 +1,9 @@
 import Footer from "@/components/footer/Footer";
-import Header from "@/components/landing/header";
-import LandingBannerSection from "@/components/landing/landingBannerSection";
-import LandingSectionOne from "@/components/landing/landingSectionOne";
-import LandingSectionThree from "@/components/landing/landingSectionThree";
-import LandingSectionTwo from "@/components/landing/landingSectionTwo";
+import Header from "@/components/landing/Header";
+import LandingBannerSection from "@/components/landing/LandingBannerSection";
+import LandingSectionOne from "@/components/landing/LandingSectionOne";
+import LandingSectionThree from "@/components/landing/LandingSectionThree";
+import LandingSectionTwo from "@/components/landing/LandingSectionTwo";
 import NavBar from "@/components/navBar";
 
 export default function Home() {
