@@ -1,7 +1,7 @@
 import Footer from "@/components/footer/Footer";
 import HowHeader from "@/components/howPage/howHeader";
 import HowSectionOne from "@/components/howPage/HowSectionOne";
-import NavBar from "@/components/navBar/navBar";
+import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
 
 export default function HowItWorks() {

@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/Footer";
-import NavBar from "@/components/navBar/navBar";
+import NavBar from "@/components/navBar/NavBar";
+
 
 export default function WhoItsFor() {
     return (

@@ -4,7 +4,8 @@ import LandingBannerSection from "@/components/landing/LandingBannerSection";
 import LandingSectionOne from "@/components/landing/LandingSectionOne";
 import LandingSectionThree from "@/components/landing/LandingSectionThree";
 import LandingSectionTwo from "@/components/landing/LandingSectionTwo";
-import NavBar from "@/components/navBar/navBar";
+import NavBar from "@/components/navBar/NavBar";
+
 
 
 export default function Home() {
