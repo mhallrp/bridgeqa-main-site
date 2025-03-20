@@ -9,7 +9,7 @@ const WhoSectionOne = () => {
                 <p className="font-semibold">
                     Take control of the review process and say goodbye to messy screenshots, Slack threads, and endless back-and-forth. With BridgeQA, you can instantly overlay Figma designs on live websites, flag inconsistencies, and track updates, all without leaving your workflow.
                 </p>
-                <div className="flex flex-col gap-2.5 text-sm">
+                <div className="flex flex-col gap-2.5 text-sm font-regular">
                     <p className="text-light font-semibold">
                         <span className="font-bold">✅ Instant Design Overlays: </span>
                         Compare Figma designs with live builds in one click.
@@ -35,7 +35,7 @@ const WhoSectionOne = () => {
                 </h2>
                 <p className="font-semibold">
                 Get real-time visibility into the design-to-development process. BridgeQA helps you track issues, streamline approvals, and ensure pixel-perfect execution, without chasing updates or losing feedback in Slack.                </p>
-                <div className="flex flex-col gap-2.5 text-sm">
+                <div className="flex flex-col gap-2.5 text-sm font-regular">
                     <p className="text-light font-semibold">
                         <span className="font-bold">👀 Monitor Design Accuracy: </span>
                         Ensure the live site matches the Figma specs.
@@ -61,7 +61,7 @@ const WhoSectionOne = () => {
                 </h2>
                 <p className="font-semibold">
                 Stop switching between tools. Build and compare simultaneously with a live Figma overlay. BridgeQA helps you spot discrepancies before they become bugs, saving you time and frustration.                </p>
-                <div className="flex flex-col gap-2.5 text-sm">
+                <div className="flex flex-col gap-2.5 text-sm font-regular">
                     <p className="text-light font-semibold">
                         <span className="font-bold">🔍 Real-Time Figma Overlay: </span>
                         Align your build with design without switching tabs.

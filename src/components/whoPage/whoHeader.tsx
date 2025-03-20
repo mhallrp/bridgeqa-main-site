@@ -13,7 +13,7 @@ const WhoHeader = () =>{
                 </p>
             </div>
             <div className="flex w-[53.45%] h-full">
-                <img src="/howHeader.png" alt="icon" className="w-full" />
+                <img src="/landingImageOne.png" alt="icon" className="w-full" />
             </div>
         </div>
     )
