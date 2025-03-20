@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
     return (
         <div className="flex w-full py-14 bg-[#0090FF] justify-center px-8">
@@ -6,12 +8,11 @@ const Footer = () => {
                     <button>
                         <span className="cursor-pointer">How it works</span>
                     </button>
-                    <button>
-                        <span className="cursor-pointer">Who it&apos;s for</span>
-                    </button>
-                    <button>
-                        <span className="cursor-pointer">Blog</span>
-                    </button>
+                    <Link href="/who-its-for">
+                        <button>
+                            <span className="cursor-pointer">Who it&apos;s for</span>
+                        </button>
+                    </Link>
                     <button>
                         <span className="cursor-pointer">Contact us</span>
                     </button>
@@ -30,12 +31,12 @@ const Footer = () => {
                         Request early access
                     </button>
                     <div className="flex flex-row h-full items-end font-bold gap-11">
-                        <button>
+                        {/* <button>
                             <span className="cursor-pointer">Privacy Policy</span>
                         </button>
                         <button>
                             <span className="cursor-pointer">Terms of Service</span>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
 

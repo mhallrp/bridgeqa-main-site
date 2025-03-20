@@ -86,9 +86,6 @@ const NavBar = () => {
                         <button className="px-8">
                         <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
                         </button>
-                    <button className="px-8">
-                        <span className="text-sm font-bold cursor-pointer">Blog</span>
-                        </button>
                         <button className="bg-bridgeBlue py-2 px-6 rounded cursor-pointer">
                         <span className="text-sm font-semibold text-white">Request early access</span>
                         </button>
