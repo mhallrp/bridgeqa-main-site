@@ -16,7 +16,7 @@ export async function POST(req) {
       from: email,
       to: "info@bridgeqa.com",
       subject: `Message from ${name}`,
-      text: "some test message",
+      text: "some new test message",
     });
 
     return new Response(JSON.stringify({ message: 'Email sent successfully!' }), {
