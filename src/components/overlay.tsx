@@ -50,7 +50,7 @@ const Overlay: React.FC<OverlayProps> = ({ onClose }) => {
             onClick={onClose}
         >
             <div
-                className="relative p-9 bg-white border-4 border-bridgeBlue rounded-3xl flex flex-col gap-6 w-full max-w-[960px]"
+                className="relative p-9 bg-white border-4 border-bridgeBlue rounded-3xl flex flex-col gap-6 w-full  max-w-[960px]"
                 onClick={(e) => e.stopPropagation()}
             >
                 {loading && (
@@ -77,9 +77,11 @@ const Overlay: React.FC<OverlayProps> = ({ onClose }) => {
                     </div>
                 ) : (
                     <>
+                    <div className="flex w-full justify-center items-center" >
                         <h1 className="font-montserrat font-black text-4xl">
                             Request Early Access to BridgeQA
                         </h1>
+                        </div>
                         <p className="font-semibold text-light">
                             We’re launching soon. Sign up to be among the first to streamline your design QA workflow.
                         </p>
@@ -166,11 +168,11 @@ const Overlay: React.FC<OverlayProps> = ({ onClose }) => {
                                 />
                             </div>
 
-                            <div>
+                            <div className="flex justify-center">
                                 <button
                                     type="submit"
                                     disabled={!isFormValid || loading}
-                                    className={`text-white rounded py-2 px-4 font-semibold text-sm self-start ${isFormValid && !loading
+                                    className={`text-white rounded py-2 px-4 font-semibold text-sm  ${isFormValid && !loading
                                         ? "bg-bridgeBlue cursor-pointer"
                                         : "bg-gray-400 cursor-not-allowed"
                                         }`}
