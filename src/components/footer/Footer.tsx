@@ -15,10 +15,11 @@ const Footer = () => {
                             <span className="cursor-pointer">Who it&apos;s for</span>
                         </button>
                     </Link>
-                    <button>
-                        <span className="cursor-pointer">Contact us</span>
-                    </button>
-
+                    <a href="mailto:info@bridgeqa.com">
+                        <button>
+                            Contact us:<span className="font-regular cursor-pointer"> info@bridgeqa.com</span>
+                        </button>
+                    </a>
                     <p className="mt-8">
                         © {new Date().getFullYear()} BridgeQA. All rights reserved.
                     </p>

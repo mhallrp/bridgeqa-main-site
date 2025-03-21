@@ -1,7 +1,15 @@
+'use client'
+import { useState } from "react";
+import Overlay from "../overlay";
+
 const Header = () => {
+
+    const [showOverlay, setShowOverlay] = useState(false);
+
     return (
         <div className="flex w-full justify-center text-center">
             <div className="pt-30">
+            {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
                 <h1 className="font-montserrat font-black text-[40px]">
                     <span className="mr-1">Stop Losing Sleep Over</span>
                     <span className="bg-gradient-to-r from-[#0090FF] via-[#7D00FF] to-[#A600FF] bg-clip-text text-transparent mx-1">
@@ -13,10 +21,10 @@ const Header = () => {
                     Forget manual screenshots, lost Slack messages, and endless back-and-forth. BridgeQA lets you effortlessly compare Figma designs with your live website, flag mismatches, and sync seamlessly with your developers right from your browser.
                 </p>
                 <div className="flex flex-row content-center justify-center gap-[24px]">
-                    <button className="px-6 py-2 font-semibold border-2 text-sm border-bridgeBlue rounded box-border cursor-pointer">
+                    {/* <button className="px-6 py-2 font-semibold border-2 text-sm border-bridgeBlue rounded box-border cursor-pointer">
                         Get in touch
-                    </button>
-                    <button className="px-6 py-2 font-semibold text-sm text-sm text-white bg-bridgeBlue rounded cursor-pointer">
+                    </button> */}
+                    <button className="px-6 py-2 font-semibold text-sm text-sm text-white bg-bridgeBlue rounded cursor-pointer" onClick={() => setShowOverlay(true)} >
                         Request early access
                     </button>
                 </div>

@@ -27,7 +27,7 @@ const LandingBannerSection = () => {
                     ✅ Sync with Jira, Slack, & GitHub
                     </p>
                     <p>
-                    Ensure issues actually get track  where you already work.
+                    Ensure issues actually get track where you already work.
                     </p>
                 </div>
                 <div className="flex flex-col gap-3">
