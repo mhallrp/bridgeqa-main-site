@@ -74,8 +74,6 @@ const Overlay: React.FC<OverlayProps> = ({ onClose }) => {
                             </a>{" "}
                             if you have any questions.
                         </p>
-
-
                     </div>
                 ) : (
                     <>

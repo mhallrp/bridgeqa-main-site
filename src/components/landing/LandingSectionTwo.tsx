@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import { useState } from "react";
 
 const LandingSectionTwo = () => {
@@ -23,9 +24,8 @@ const LandingSectionTwo = () => {
                         {buttons.map((btn) => (
                             <button
                                 key={btn.name}
-                                className={`w-auto self-start py-2 px-6 font-semibold text-sm rounded-md cursor-pointer ${
-                                    selectedButton === btn.name ? "bg-bridgeBlue text-white" : "bg-transparent"
-                                }`}
+                                className={`w-auto self-start py-2 px-6 font-semibold text-sm rounded-md cursor-pointer ${selectedButton === btn.name ? "bg-bridgeBlue text-white" : "bg-transparent"
+                                    }`}
                                 onClick={() => setSelectedButton(btn.name)}
                             >
                                 {btn.name}
@@ -33,7 +33,7 @@ const LandingSectionTwo = () => {
                         ))}
                     </div>
                 </div>
-                
+
                 {/* Dynamic Image Update */}
                 <img src={selectedImage} alt="Selected Visual" className="w-full transition-opacity duration-300 ease-in-out" />
             </div>
@@ -44,7 +44,7 @@ const LandingSectionTwo = () => {
                 </h2>
 
                 <p className="leading-6 my-4 font-semibold">
-                BridgeQA is a Chrome extension that helps teams instantly compare Figma designs with live websites and track issues directly in their workflow. All the feedback in one place.                
+                    BridgeQA is a Chrome extension that helps teams instantly compare Figma designs with live websites and track issues directly in their workflow. All the feedback in one place.
                 </p>
 
                 <div className="flex text-light flex-col gap-5">
@@ -63,9 +63,11 @@ const LandingSectionTwo = () => {
                             📌 <span className="font-semibold">Step 3:</span> Flag Issues, Leave Feedback & Sync
                         </p>
                     </div>
-                    <button className="py-2 px-6 rounded bg-bridgeBlue font-semibold w-auto text-sm self-start text-white cursor-pointer">
-                        Find out more about BridgeQA
-                    </button>
+                    <Link href="/how-it-works">
+                        <button className="py-2 px-6 rounded bg-bridgeBlue font-semibold w-auto text-sm self-start text-white cursor-pointer" >
+                            Find out more about BridgeQA
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

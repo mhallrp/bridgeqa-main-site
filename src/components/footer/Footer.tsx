@@ -1,8 +1,15 @@
+'use client'
 import Link from "next/link";
+import { useState } from "react";
+import Overlay from "../overlay";
 
 const Footer = () => {
+
+    const [showOverlay, setShowOverlay] = useState(false);
+
     return (
         <div className="flex w-full py-14 bg-[#0090FF] justify-center px-8">
+            {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
             <div className="flex flex-row h-full max-w-[1216px] w-full justify-between items-between text-white">
                 <div className="flex flex-col gap-2.5 font-bold w-full items-start hidden lg:flex">
                     <Link href="/how-it-works">
@@ -31,7 +38,7 @@ const Footer = () => {
                     <p>
                         Join the early access list and be the first to try BridgeQA.
                     </p>
-                    <button className="py-2 px-6 bg-white rounded-md text-bridgeBlue font-semibold text-sm cursor-pointer">
+                    <button className="py-2 px-6 bg-white rounded-md text-bridgeBlue font-semibold text-sm cursor-pointer" onClick={() => setShowOverlay(true)}>
                         Request early access
                     </button>
                     <div className="flex flex-row h-full items-end font-bold gap-11">

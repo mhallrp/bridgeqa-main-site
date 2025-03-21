@@ -6,6 +6,7 @@ import NavMenu from "./navMenu";
 
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
+import Overlay from "../overlay";
 
 const NavBar = () => {
 
@@ -69,16 +70,17 @@ const NavBar = () => {
         setIsMenuOpen((prev) => !prev);
     };
 
+    const [showOverlay, setShowOverlay] = useState(false);
+
     return (
 
         // Main Nav Bar
         <div className="fixed z-30 w-full bg-white h-[80px]">
+            {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
             <div className="hidden lg:flex h-full py-5 px-16 items-center justify-center">
                 <div className="flex w-full items-center justify-between">
                     <button onClick={() => handleNavigationAndScroll("top")} className="cursor-pointer">
-
                         <img src="/bridgeQAIcon.png" alt="icon" className="h-[40px]" />
-
                     </button>
                     <div className="flex gap-8 items-center">
                         <Link href="/how-it-works">
@@ -91,7 +93,7 @@ const NavBar = () => {
                             <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
                         </button>
                         </Link>
-                        <button className="bg-bridgeBlue py-2 px-6 rounded cursor-pointer">
+                        <button className="bg-bridgeBlue py-2 px-6 rounded cursor-pointer"  onClick={() => setShowOverlay(true)}>
                             <span className="text-sm font-semibold text-white">Request early access</span>
                         </button>
                     </div>
