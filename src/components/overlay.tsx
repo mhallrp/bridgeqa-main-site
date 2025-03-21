@@ -77,15 +77,15 @@ const Overlay: React.FC<OverlayProps> = ({ onClose }) => {
                     </div>
                 ) : (
                     <>
-                    <div className="flex w-full justify-center items-center" >
-                        <h1 className="font-montserrat font-black text-4xl">
-                            Request Early Access to BridgeQA
-                        </h1>
-                        </div>
-                        <p className="font-semibold text-light">
-                            We’re launching soon. Sign up to be among the first to streamline your design QA workflow.
-                        </p>
+                        <div className="flex flex-col w-full justify-center items-center gap-4" >
+                            <h1 className="font-montserrat font-black text-4xl">
+                                Request Early Access to BridgeQA
+                            </h1>
 
+                            <p className="font-semibold text-light">
+                                We’re launching soon. Sign up to be among the first to streamline your design QA workflow.
+                            </p>
+                        </div>
                         <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                             <div className="flex gap-6">
                                 <div className="w-1/2 flex flex-col">
