@@ -5,12 +5,10 @@ export async function POST(req) {
     const { name, email, role, teamSize, message } = await req.json();
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',
-      port: 587,
-      secure: false, // must be false for Office365
+      service: 'gmail',
       auth: {
-        user: 'info@bridgeqa.com',
-        pass: process.env.OFFICE365_APP_PASSWORD, // use app password if MFA is on
+        user: process.env.EMAIL, // mhallrp@gmail.com
+        pass: process.env.PASSWORD,
       },
     });
 
@@ -26,9 +24,8 @@ ${message || "(No message provided)"}
     `.trim();
 
     await transporter.sendMail({
-      from: '"BridgeQA" <info@bridgeqa.com>',
-      to: 'info@bridgeqa.com',
-      replyTo: email,
+      from: `"BridgeQA Form" <${process.env.EMAIL}>`, // Must be your Gmail
+      to: "info@bridgeqa.com",                       // Where you want to receive it
       subject: `BridgeQA Early Access Request from ${email}`,
       text: emailBody,
     });
