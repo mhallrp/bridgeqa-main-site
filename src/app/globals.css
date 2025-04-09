@@ -18,6 +18,7 @@ body {
 p {
   line-height: 24px;
 }
+
 /* Create a Montserrat class */
 .font-montserrat {
   font-family: var(--font-montserrat);

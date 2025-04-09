@@ -35,7 +35,7 @@ const LandingSectionTwo = () => {
                 </div>
 
                 {/* Dynamic Image Update */}
-                <img src={selectedImage} alt="Selected Visual" className="w-full transition-opacity duration-300 ease-in-out" />
+                <img src={selectedImage} alt="Selected Visual" className="w-full transition-opacity duration-300 ease-in-out mt-5" />
             </div>
 
             <div className="flex flex-col w-full lg:w-[37.83%] h-full order-1 lg:order-2">
