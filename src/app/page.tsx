@@ -23,7 +23,7 @@ export default function Home() {
           property="og:description"
           content="Compare Figma vs. live builds right in your browser. No more scattered feedback or last-minute mismatches."
         />
-        <meta property="og:image" content="https://www.bridgeqa.com/bridgeqa-home-OG.png" />
+        <meta property="og:image" content="https://www.bridgeqa.com/bridgeqa-home-OG.jpg" />
         <meta property="og:url" content="https://www.bridgeqa.com/" />
         <meta property="og:type" content="website" />
 
@@ -34,7 +34,7 @@ export default function Home() {
           name="twitter:description"
           content="Compare Figma vs. live builds right in your browser. No more scattered feedback or mismatches."
         />
-        <meta name="twitter:image" content="https://www.bridgeqa.com/bridgeqa-home-OG.png" />
+        <meta name="twitter:image" content="https://www.bridgeqa.com/bridgeqa-home-OG.jpg" />
       </Head>
 
       <main className="overflow-hidden">

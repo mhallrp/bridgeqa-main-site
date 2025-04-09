@@ -29,9 +29,11 @@ const Header = () => {
                         </p>
 
                         <div className="flex flex-row content-center justify-left gap-6 ">
-                            <button className="px-6 py-2 font-semibold border-2 text-sm border-bridgeBlue rounded box-border cursor-pointer">
-                                Get in touch
-                            </button>
+                            <a href="mailto:info@bridgeqa.com">
+                                <button className="px-6 py-2 font-semibold border-2 text-sm border-bridgeBlue rounded box-border cursor-pointer">
+                                    Get in touch
+                                </button>
+                            </a>
                             <button className="px-6 py-2 font-semibold text-sm text-sm text-white bg-bridgeBlue rounded cursor-pointer" onClick={() => setShowOverlay(true)} >
                                 Request early access
                             </button>
