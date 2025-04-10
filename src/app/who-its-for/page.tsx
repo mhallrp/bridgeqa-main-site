@@ -10,26 +10,28 @@ export default function WhoItsFor() {
   return (
     <>
       <Head>
+
+
         {/* HTML Title */}
-        <title>How BridgeQA Works – Compare Figma & Code in One Place</title>
+        <title>Who BridgeQA Is For – Designers, Devs, and PMs</title>
 
         {/* Meta Description */}
         <meta name="description"
-          content="Learn how BridgeQA overlays your design frames on live builds, letting you flag mismatches and unify feedback in one browser extension." />
+          content="BridgeQA streamlines design QA for designers, developers, and product managers, ensuring your builds stay on track and aligned with the original design." />
 
         {/* Open Graph / Social Sharing */}
-        <meta property="og:title" content="How BridgeQA Works – Compare Figma & Code in One Place" />
-        <meta property="og:description"
-          content="See how our Chrome extension tracks design feedback and ensures your final product matches the original vision." />
-        <meta property="og:image" content="https://www.bridgeqa.com/images/bridgeqa-howitworks-OG.png" />
-        <meta property="og:url" content="https://www.bridgeqa.com/how-it-works" />
+        <meta property="og:title" content="Who BridgeQA Is For – Designers, Devs, and PMs" />
+        <meta property="og:description" content="Whether you’re a designer, developer, or PM, BridgeQA helps unify feedback and track changes, so everyone’s on the same page." />
+        <meta property="og:image" content="https://www.bridgeqa.com/images/bridgeqa-whofor-OG.png" />
+        <meta property="og:url" content="https://www.bridgeqa.com/who-its-for" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How BridgeQA Works – Compare Figma & Code in One Place" />
-        <meta name="twitter:description" content="See how our browser-based tool helps you track design vs. final build in real time." />
-        <meta name="twitter:image" content="https://www.bridgeqa.com/images/bridgeqa-howitworks-OG.png" />
+        <meta name="twitter:title" content="Who BridgeQA Is For – Designers, Devs, and PMs" />
+        <meta name="twitter:description"
+          content="Designers, developers, and product managers can align on final builds, no more scattered feedback. See how BridgeQA simplifies QA collaboration." />
+        <meta name="twitter:image" content="https://www.bridgeqa.com/images/bridgeqa-whofor-OG.png" />
       </Head>
 
       <main className="overflow-hidden">
