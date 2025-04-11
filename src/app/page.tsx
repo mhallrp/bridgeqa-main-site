@@ -7,7 +7,6 @@ import LandingSectionOne from "@/components/landing/LandingSectionOne";
 import LandingSectionThree from "@/components/landing/LandingSectionThree";
 import LandingSectionTwo from "@/components/landing/LandingSectionTwo";
 import NavBar from "@/components/navBar/NavBar";
-import Script from "next/script";
 
 // ✅ Metadata for SEO and social sharing
 export const metadata = {
@@ -40,32 +39,6 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
-      {/* ✅ 1. Load the Amplitude SDK from CDN */}
-      <Script
-        src="https://cdn.amplitude.com/libs/analytics-browser-1.0.0-min.js"
-        strategy="afterInteractive"
-      />
-
-      {/* ✅ 2. Initialize after load */}
-      <Script id="amplitude-init" strategy="afterInteractive">
-        {`
-          if (window.amplitude && (window.location.hostname === 'bridgeqa.com' || window.location.hostname === 'www.bridgeqa.com')) {
-            const plugin = window.amplitude.sessionReplay?.plugin?.({ sampleRate: 1 });
-            if (plugin) {
-              window.amplitude.add(plugin);
-            }
-            window.amplitude.init('5a9a1de1c5239a1a61661853b6457b75', {
-              defaultTracking: {
-                sessions: true,
-                pageViews: true,
-                formInteractions: true,
-              }
-            });
-          }
-        `}
-      </Script>
-
       <main className="overflow-hidden">
         <NavBar />
 
@@ -93,6 +66,5 @@ export default function Home() {
           <Footer />
         </section>
       </main>
-    </>
   );
 }
