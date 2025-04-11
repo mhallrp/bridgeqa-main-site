@@ -32,6 +32,20 @@ export default function WhoItsFor() {
         <meta name="twitter:description"
           content="Designers, developers, and product managers can align on final builds, no more scattered feedback. See how BridgeQA simplifies QA collaboration." />
         <meta name="twitter:image" content="https://www.bridgeqa.com/images/bridgeqa-whofor-OG.png" />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        if (window.location.hostname === 'bridgeqa.com' || window.location.hostname === 'www.bridgeqa.com') {
+          window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
+          window.amplitude.init('5a9a1de1c5239a1a61661853b6457b75', {
+            autocapture: { elementInteractions: true }
+          });
+        }
+      `,
+          }}
+        />
+        
       </Head>
 
       <main className="overflow-hidden">
