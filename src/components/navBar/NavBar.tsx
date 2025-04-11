@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import NavMenu from "./navMenu";
-
+import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Overlay from "../overlay";
@@ -80,7 +80,7 @@ const NavBar = () => {
             <div className="hidden lg:flex h-full py-5 px-16 items-center justify-center">
                 <div className="flex w-full items-center justify-between">
                     <button onClick={() => handleNavigationAndScroll("top")} className="cursor-pointer">
-                        <img src="/bridgeQAIcon.png" alt="icon" className="h-[40px]" />
+                        <Image src="/bridgeQAIcon.png" alt="icon" className="w-full h-[40px] object-cover" width={0} height={0} sizes="100vw" />
                     </button>
                     <div className="flex gap-8 items-center">
                         <Link href="/how-it-works">
@@ -89,11 +89,11 @@ const NavBar = () => {
                             </button>
                         </Link>
                         <Link href="/who-its-for">
-                        <button >
-                            <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
-                        </button>
+                            <button >
+                                <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
+                            </button>
                         </Link>
-                        <button className="bg-bridgeBlue py-2 px-6 rounded cursor-pointer"  onClick={() => setShowOverlay(true)}>
+                        <button className="bg-bridgeBlue py-2 px-6 rounded cursor-pointer" onClick={() => setShowOverlay(true)}>
                             <span className="text-sm font-semibold text-white">Request early access</span>
                         </button>
                     </div>
@@ -104,7 +104,7 @@ const NavBar = () => {
             <div className="flex lg:hidden w-full flex-col">
                 <div className="flex h-auto py-5 pl-16 items-center justify-center">
                     <button onClick={() => handleNavigationAndScroll("top")}>
-                        <img src="/bridgeQAIcon.png" alt="icon" className="h-[40px]" />
+                        <Image src="/bridgeQAIcon.png" alt="icon" className="w-full h-[40px] object-cover" width={0} height={0} sizes="100vw" />
                     </button>
 
                     <div className="flex-1" />

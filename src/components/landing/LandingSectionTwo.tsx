@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const LandingSectionTwo = () => {
     // State to track the selected button
@@ -35,7 +36,8 @@ const LandingSectionTwo = () => {
                 </div>
 
                 {/* Dynamic Image Update */}
-                <img src={selectedImage} alt="Selected Visual" className="w-full transition-opacity duration-300 ease-in-out mt-5" />
+                <Image src={selectedImage} alt="icon" className="w-full h-full object-cover transition-opacity duration-300 ease-in-out mt-5" width={0} height={0} sizes="100vw" />
+
             </div>
 
             <div className="flex flex-col w-full lg:w-[37.83%] h-full order-1 lg:order-2">

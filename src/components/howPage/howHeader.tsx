@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const HowHeader = () => {
     return (
         <div className="flex flex-row py-24 justify-between items-center">
@@ -13,7 +15,7 @@ const HowHeader = () => {
                 </p>
             </div>
             <div className="flex w-[53.45%] h-full">
-                <img src="/landingImageThree.png" alt="icon" className="w-full" />
+                <Image src="/landingImageThree.png" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
             </div>
         </div>
     )

@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 const LandingSectionOne = () => {
     return (
@@ -27,7 +28,7 @@ const LandingSectionOne = () => {
                 </div>
             </div>
             <div className="flex lg:w-[56.91%] h-full">
-                <img src="/landingImage.png" alt="icon" className="w-full" />
+                <Image src="/landingImage.png" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import Overlay from "../overlay";
+import Image from "next/image";
 
 const Header = () => {
 
@@ -41,7 +42,7 @@ const Header = () => {
                     </div>
 
                     <div className="flex w-[50.99%] h-full">
-                        <img src="/landingHeader.png" alt="icon" className="w-full" />
+                        <Image src="/landingHeader.png" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
                     </div>
 
                 </div>
