@@ -43,9 +43,6 @@ export default function WhoItsFor() {
       <Script
         src="https://cdn.amplitude.com/libs/analytics-browser-1.0.0-min.js"
         strategy="afterInteractive"
-        onLoad={() => {
-          console.log("✅ Amplitude script loaded");
-        }}
       />
 
       {/* ✅ 2. Initialize after load */}
