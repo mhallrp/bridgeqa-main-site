@@ -20,7 +20,7 @@ export const metadata = {
     siteName: "BridgeQA",
     images: [
       {
-        url: "https://www.bridgeqa.com/images/bridgeqa-whofor-OG.webp",
+        url: "https://www.bridgeqa.com/bridgeqa-whofor-OG.webp",
         width: 1200,
         height: 630,
       },
@@ -32,7 +32,7 @@ export const metadata = {
     title: "Who BridgeQA Is For – Designers, Devs, and PMs",
     description:
       "Designers, developers, and product managers can align on final builds, no more scattered feedback. See how BridgeQA simplifies QA collaboration.",
-    images: ["https://www.bridgeqa.com/images/bridgeqa-whofor-OG.webp"],
+    images: ["https://www.bridgeqa.com/bridgeqa-whofor-OG.webp"],
   },
 };
 
