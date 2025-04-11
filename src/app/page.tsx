@@ -41,13 +41,29 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      {/* ✅ Inject Amplitude script client-side only */}
+      {/* ✅ 1. Load the Amplitude SDK from CDN */}
+      <Script
+        src="https://cdn.amplitude.com/libs/analytics-browser-1.0.0-min.js"
+        strategy="afterInteractive"
+        onLoad={() => {
+          console.log("✅ Amplitude script loaded");
+        }}
+      />
+
+      {/* ✅ 2. Initialize after load */}
       <Script id="amplitude-init" strategy="afterInteractive">
         {`
-          if (window.location.hostname === 'bridgeqa.com' || window.location.hostname === 'www.bridgeqa.com') {
-            window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
+          if (window.amplitude && (window.location.hostname === 'bridgeqa.com' || window.location.hostname === 'www.bridgeqa.com')) {
+            const plugin = window.amplitude.sessionReplay?.plugin?.({ sampleRate: 1 });
+            if (plugin) {
+              window.amplitude.add(plugin);
+            }
             window.amplitude.init('5a9a1de1c5239a1a61661853b6457b75', {
-              autocapture: { elementInteractions: true }
+              defaultTracking: {
+                sessions: true,
+                pageViews: true,
+                formInteractions: true,
+              }
             });
           }
         `}
