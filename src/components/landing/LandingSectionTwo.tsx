@@ -9,13 +9,13 @@ const LandingSectionTwo = () => {
 
     // Button options and corresponding images
     const buttons = [
-        { name: "Link Figma", image: "/landingImageOne.png" },
-        { name: "Compare with design", image: "/landingImageTwo.png" },
-        { name: "Leave feedback", image: "/landingImageThree.png" }
+        { name: "Link Figma", image: "/landingImageOne.webp" },
+        { name: "Compare with design", image: "/landingImageTwo.webp" },
+        { name: "Leave feedback", image: "/landingImageThree.webp" }
     ];
 
     // Find the selected image based on the button
-    const selectedImage = buttons.find((btn) => btn.name === selectedButton)?.image || "/landingImageOne.png";
+    const selectedImage = buttons.find((btn) => btn.name === selectedButton)?.image || "/landingImageOne.webp";
 
     return (
         <div className="flex lg:flex-row flex-col items-center gap-8 lg:gap-0 justify-between h-full">

@@ -22,7 +22,7 @@ export default function WhoItsFor() {
         {/* Open Graph / Social Sharing */}
         <meta property="og:title" content="Who BridgeQA Is For – Designers, Devs, and PMs" />
         <meta property="og:description" content="Whether you’re a designer, developer, or PM, BridgeQA helps unify feedback and track changes, so everyone’s on the same page." />
-        <meta property="og:image" content="https://www.bridgeqa.com/images/bridgeqa-whofor-OG.png" />
+        <meta property="og:image" content="https://www.bridgeqa.com/images/bridgeqa-whofor-OG.webp" />
         <meta property="og:url" content="https://www.bridgeqa.com/who-its-for" />
         <meta property="og:type" content="website" />
 
@@ -31,7 +31,7 @@ export default function WhoItsFor() {
         <meta name="twitter:title" content="Who BridgeQA Is For – Designers, Devs, and PMs" />
         <meta name="twitter:description"
           content="Designers, developers, and product managers can align on final builds, no more scattered feedback. See how BridgeQA simplifies QA collaboration." />
-        <meta name="twitter:image" content="https://www.bridgeqa.com/images/bridgeqa-whofor-OG.png" />
+        <meta name="twitter:image" content="https://www.bridgeqa.com/images/bridgeqa-whofor-OG.webp" />
 
         <script
           dangerouslySetInnerHTML={{

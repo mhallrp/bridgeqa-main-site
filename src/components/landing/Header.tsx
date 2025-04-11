@@ -42,7 +42,7 @@ const Header = () => {
                     </div>
 
                     <div className="flex w-[50.99%] h-full">
-                        <Image src="/landingHeader.png" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
+                        <Image src="/landingHeader.webp" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw" priority/>
                     </div>
 
                 </div>

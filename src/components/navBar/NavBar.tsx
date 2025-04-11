@@ -80,7 +80,7 @@ const NavBar = () => {
             <div className="hidden lg:flex h-full py-5 px-16 items-center justify-center">
                 <div className="flex w-full items-center justify-between">
                     <button onClick={() => handleNavigationAndScroll("top")} className="cursor-pointer">
-                        <Image src="/bridgeQAIcon.png" alt="icon" className="w-full h-[40px] object-cover" width={0} height={0} sizes="100vw" />
+                        <Image src="/bridgeQAIcon.webp" alt="icon" className="w-full h-[40px] object-cover" width={0} height={0} sizes="100vw" priority/>
                     </button>
                     <div className="flex gap-8 items-center">
                         <Link href="/how-it-works">
@@ -104,7 +104,7 @@ const NavBar = () => {
             <div className="flex lg:hidden w-full flex-col">
                 <div className="flex h-auto py-5 pl-16 items-center justify-center">
                     <button onClick={() => handleNavigationAndScroll("top")}>
-                        <Image src="/bridgeQAIcon.png" alt="icon" className="w-full h-[40px] object-cover" width={0} height={0} sizes="100vw" />
+                        <Image src="/bridgeQAIcon.webp" alt="icon" className="w-full h-[40px] object-cover" width={0} height={0} sizes="100vw" priority/>
                     </button>
 
                     <div className="flex-1" />

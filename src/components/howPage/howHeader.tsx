@@ -15,7 +15,7 @@ const HowHeader = () => {
                 </p>
             </div>
             <div className="flex w-[53.45%] h-full">
-                <Image src="/landingImageThree.png" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
+                <Image src="/landingImageThree.webp" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw" priority/>
             </div>
         </div>
     )

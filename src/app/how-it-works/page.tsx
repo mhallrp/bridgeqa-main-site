@@ -22,7 +22,7 @@ export default function HowItWorks() {
         <meta property="og:title" content="How BridgeQA Works – Compare Figma & Code in One Place" />
         <meta property="og:description"
           content="See how our Chrome extension tracks design feedback and ensures your final product matches the original vision." />
-        <meta property="og:image" content="https://www.bridgeqa.com/bridgeqa-howitworks-OG.png" />
+        <meta property="og:image" content="https://www.bridgeqa.com/bridgeqa-howitworks-OG.webp" />
         <meta property="og:url" content="https://www.bridgeqa.com/how-it-works" />
         <meta property="og:type" content="website" />
 
@@ -30,7 +30,7 @@ export default function HowItWorks() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How BridgeQA Works – Compare Figma & Code in One Place" />
         <meta name="twitter:description" content="See how our browser-based tool helps you track design vs. final build in real time." />
-        <meta name="twitter:image" content="https://www.bridgeqa.com/bridgeqa-howitworks-OG.png" />
+        <meta name="twitter:image" content="https://www.bridgeqa.com/bridgeqa-howitworks-OG.webp" />
 
         <script
           dangerouslySetInnerHTML={{

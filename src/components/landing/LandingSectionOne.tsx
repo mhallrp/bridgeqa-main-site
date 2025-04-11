@@ -28,7 +28,7 @@ const LandingSectionOne = () => {
                 </div>
             </div>
             <div className="flex lg:w-[56.91%] h-full">
-                <Image src="/landingImage.png" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
+                <Image src="/landingImage.webp" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
             </div>
         </div>
     )

@@ -73,7 +73,7 @@ const HowSectionOne = () => {
                 </div>
             </div>
             <div className="flex w-[59.54%] h-full">
-                <Image src="/howImage.png" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
+                <Image src="/howImage.webp" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw"/>
             </div>
         </div>
     )
