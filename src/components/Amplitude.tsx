@@ -17,5 +17,6 @@ export default function Amplitude() {
       });      
   }, []);
 
+  
   return null; // this component doesn't render anything
 }
