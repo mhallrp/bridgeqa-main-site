@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Amplitude from "@/components/Amplitude";
+import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,11 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
+        <Script
           id="cookieyes"
-          type="text/javascript"
-          src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js">
-        </script>
+          src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
