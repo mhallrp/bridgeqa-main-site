@@ -44,19 +44,21 @@ export default function Amplitude() {
     };
 
     const interval = setInterval(() => {
-      const isReady = typeof window.cookieyes?.hasConsent === "function";
-
+      const cookieYesObj = window.cookieyes;
+      console.log("⌛ Polling CookieYes...", cookieYesObj);
+    
+      const isReady = typeof cookieYesObj?.hasConsent === "function";
+    
       if (isReady) {
-        console.log("⚙️ CookieYes is ready");
+        console.log("✅ CookieYes is ready!");
         const didInit = checkConsentAndInit();
-
+    
         if (didInit) {
           clearInterval(interval);
         }
-      } else {
-        console.log("⌛ Waiting for CookieYes to load...");
       }
     }, 500);
+    
 
     return () => {
       console.log("🧹 Cleaning up interval");
