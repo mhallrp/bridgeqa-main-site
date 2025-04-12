@@ -3,10 +3,22 @@
 import { useEffect } from "react";
 import * as amplitude from "@amplitude/analytics-browser";
 
+// 👇 Define CookieYes interface
+interface CookieYes {
+  hasConsent: (category: string) => boolean;
+}
+
+// 👇 Extend window type
+declare global {
+  interface Window {
+    cookieyes?: CookieYes;
+  }
+}
+
 export default function Amplitude() {
   useEffect(() => {
     const checkConsentAndInit = () => {
-      const hasConsent = (window as any)?.cookieyes?.hasConsent?.("analytics");
+      const hasConsent = window.cookieyes?.hasConsent?.("analytics");
 
       if (hasConsent) {
         amplitude.init("5a9a1de1c5239a1a61661853b6457b75", {
@@ -18,21 +30,19 @@ export default function Amplitude() {
           autocapture: true,
         });
 
-        return true; // success
+        return true;
       }
 
       return false;
     };
 
-    // Wait for CookieYes to load
     const interval = setInterval(() => {
-      const ready = (window as any)?.cookieyes?.hasConsent;
+      const ready = typeof window.cookieyes?.hasConsent === "function";
       if (ready && checkConsentAndInit()) {
         clearInterval(interval);
       }
     }, 500);
 
-    // Cleanup on unmount
     return () => clearInterval(interval);
   }, []);
 
