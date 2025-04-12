@@ -17,10 +17,16 @@ declare global {
 
 export default function Amplitude() {
   useEffect(() => {
+    console.log("🔍 Amplitude component mounted");
+
     const checkConsentAndInit = () => {
       const hasConsent = window.cookieyes?.hasConsent?.("analytics");
 
+      console.log("🔎 Checking analytics consent:", hasConsent);
+
       if (hasConsent) {
+        console.log("✅ Consent given. Initializing Amplitude...");
+
         amplitude.init("5a9a1de1c5239a1a61661853b6457b75", {
           defaultTracking: {
             pageViews: true,
@@ -33,17 +39,29 @@ export default function Amplitude() {
         return true;
       }
 
+      console.log("❌ Consent NOT given. Amplitude not initialized.");
       return false;
     };
 
     const interval = setInterval(() => {
-      const ready = typeof window.cookieyes?.hasConsent === "function";
-      if (ready && checkConsentAndInit()) {
-        clearInterval(interval);
+      const isReady = typeof window.cookieyes?.hasConsent === "function";
+
+      if (isReady) {
+        console.log("⚙️ CookieYes is ready");
+        const didInit = checkConsentAndInit();
+
+        if (didInit) {
+          clearInterval(interval);
+        }
+      } else {
+        console.log("⌛ Waiting for CookieYes to load...");
       }
     }, 500);
 
-    return () => clearInterval(interval);
+    return () => {
+      console.log("🧹 Cleaning up interval");
+      clearInterval(interval);
+    };
   }, []);
 
   return null;
