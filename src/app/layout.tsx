@@ -27,6 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          id="cookieyes"
+          type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js">
+        </script>
+      </head>
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
