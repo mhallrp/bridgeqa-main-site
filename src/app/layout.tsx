@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
+
     <html lang="en">
       <head>
         <Script
@@ -36,7 +36,8 @@ export default function RootLayout({
           src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js"
           strategy="beforeInteractive"
         />
-                <Script
+        <Script
+          id="amplitude"
           type="text/plain"
           data-cookieyes="analytics"
           dangerouslySetInnerHTML={{
