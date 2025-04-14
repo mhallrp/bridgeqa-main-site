@@ -60,7 +60,7 @@ export default function RootLayout({
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
         {/* <Amplitude /> */}
-        <CookieConsentLogger />
+        {/* <CookieConsentLogger /> */}
         {children}
       </body>
     </html>
