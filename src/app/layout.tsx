@@ -30,33 +30,41 @@ export default function RootLayout({
   return (
 
     <html lang="en">
-      <head>
-        <Script
-          id="cookieyes"
-          src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js"
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="amplitude"
-          type="text/plain"
-          data-cookieyes="analytics"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                if (typeof amplitude === 'undefined') return;
-                amplitude.getInstance().init("5a9a1de1c5239a1a61661853b6457b75", {
-                  defaultTracking: {
-                    pageViews: true,
-                    sessions: true,
-                    formInteractions: true
-                  },
-                  autocapture: true
-                });
-              })();
-            `,
-          }}
-        />
-      </head>
+<head>
+  <Script
+    id="cookieyes"
+    src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js"
+    strategy="beforeInteractive"
+  />
+  <Script
+    src="https://cdn.amplitude.com/libs/analytics-browser-2.5.0-min.js.gz"
+    strategy="beforeInteractive"
+  />
+  <Script
+    src="https://cdn.amplitude.com/libs/session-replay.min.js" // ← Make sure you load sessionReplay if required
+    strategy="beforeInteractive"
+  />
+  <Script
+    id="amplitude-init"
+    strategy="afterInteractive"
+    dangerouslySetInnerHTML={{
+      __html: `
+        (async () => {
+          if (window.amplitude && window.sessionReplay) {
+            const amplitude = window.amplitude;
+            await amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
+            amplitude.init('5a9a1de1c5239a1a61661853b6457b75', {
+              autocapture: { elementInteractions: true }
+            });
+          } else {
+            console.warn('Amplitude or SessionReplay not available on window.');
+          }
+        })();
+      `,
+    }}
+  />
+</head>
+
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
