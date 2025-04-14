@@ -36,11 +36,30 @@ export default function RootLayout({
           src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js"
           strategy="beforeInteractive"
         />
+                <script
+          type="text/plain"
+          data-cookieyes="analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof amplitude === 'undefined') return;
+                amplitude.getInstance().init("5a9a1de1c5239a1a61661853b6457b75", {
+                  defaultTracking: {
+                    pageViews: true,
+                    sessions: true,
+                    formInteractions: true
+                  },
+                  autocapture: true
+                });
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
-        <Amplitude />
+        {/* <Amplitude /> */}
         <CookieConsentLogger />
         {children}
       </body>
