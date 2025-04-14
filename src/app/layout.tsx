@@ -36,7 +36,7 @@ export default function RootLayout({
           src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js"
           strategy="beforeInteractive"
         />
-                <script
+                <Script
           type="text/plain"
           data-cookieyes="analytics"
           dangerouslySetInnerHTML={{
