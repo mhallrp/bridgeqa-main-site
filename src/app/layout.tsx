@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Amplitude from "@/components/Amplitude";
 import Script from "next/script";
+import CookieConsentLogger from "@/components/CookieConsentLogger";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
         <Amplitude />
+        <CookieConsentLogger />
         {children}
       </body>
     </html>
