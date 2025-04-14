@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-import Amplitude from "@/components/Amplitude";
+
 import Script from "next/script";
 
 const inter = Inter({
@@ -47,7 +47,7 @@ export default function RootLayout({
     src="https://www.googletagmanager.com/gtag/js?id=G-KQQNCERCDH"
     strategy="afterInteractive"
   />
-  
+
   <Script
     id="google-analytics"
     strategy="afterInteractive"
