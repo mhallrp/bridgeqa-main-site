@@ -12,9 +12,10 @@ const inter = Inter({
 
 declare global {
   interface Window {
-    dataLayer: any[];
+    dataLayer: Record<string, unknown>[];
   }
 }
+
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
