@@ -104,16 +104,15 @@ const NavBar = () => {
             <div className="flex lg:hidden w-full flex-col">
                 <div className="flex h-auto py-5 pl-8 items-center justify-center">
                     <button onClick={() => handleNavigationAndScroll("top")}>
-                    <Image
-  src="/bridgeQAIcon.webp"
-  alt="BridgeQA icon"
-  className="h-10 w-auto object-contain"
-  width={0}
-  height={0}
-  sizes="100vw"
-  priority
-/>
-
+                        <Image
+                            src="/bridgeQAIcon.webp"
+                            alt="BridgeQA icon"
+                            className="h-10 w-auto object-contain"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            priority
+                        />
                     </button>
 
                     <div className="flex-1" />
