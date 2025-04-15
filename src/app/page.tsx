@@ -46,11 +46,11 @@ export default function Home() {
           <Header />
         </section>
 
-        <section className="max-w-7xl px-8 pb-24 pt-48 mx-auto" id="sectionone">
+        <section className="max-w-7xl px-8 sm:pb-24 pt-16 sm:pt-48 mx-auto" id="sectionone">
           <LandingSectionOne />
         </section>
 
-        <section className="max-w-7xl px-8 pt-24 pb-48 mx-auto" id="sectiontwo">
+        <section className="max-w-7xl px-8 pt-16 sm:pt-24 pb-16 sm:pb-48 mx-auto" id="sectiontwo">
           <LandingSectionTwo />
         </section>
 

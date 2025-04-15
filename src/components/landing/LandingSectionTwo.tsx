@@ -8,7 +8,7 @@ const LandingSectionTwo = () => {
 
   const buttons = [
     { name: "Link Figma", image: "/landingImageOne.webp" },
-    { name: "Compare with design", image: "/landingImageTwo.webp" },
+    { name: "Compare design", image: "/landingImageTwo.webp" },
     { name: "Leave feedback", image: "/landingImageThree.webp" }
   ];
 
@@ -32,12 +32,12 @@ const LandingSectionTwo = () => {
 
       <div className="flex lg:flex-row flex-col items-center gap-8 lg:gap-0 justify-between h-full">
         <div className="flex flex-col lg:w-[56.91%] h-full justify-center order-2 lg:order-1">
-          <div className="flex flex-row justify-center gap-10 w-auto">
-            <div className="flex gap-10 bg-[#F5F5F5] p-1 rounded-lg">
+          <div className="flex flex-row justify-center gap-10">
+            <div className="flex sm:gap-10 bg-[#F5F5F5] w-full sm:w-auto p-1 rounded-lg">
               {buttons.map((btn) => (
                 <button
                   key={btn.name}
-                  className={`w-auto self-start py-2 px-6 font-semibold text-sm rounded-md cursor-pointer ${selectedButton === btn.name ? "bg-bridgeBlue text-white" : "bg-transparent"}`}
+                  className={`sm:w-auto w-1/3 self-start py-2 sm:px-6 font-semibold text-sm rounded-md cursor-pointer ${selectedButton === btn.name ? "bg-bridgeBlue text-white" : "bg-transparent"}`}
                   onClick={() => setSelectedButton(btn.name)}
                 >
                   {btn.name}

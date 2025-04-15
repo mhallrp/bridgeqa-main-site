@@ -102,7 +102,7 @@ const NavBar = () => {
 
             {/* Burger menu */}
             <div className="flex lg:hidden w-full flex-col">
-                <div className="flex h-auto py-5 pl-16 items-center justify-center">
+                <div className="flex h-auto py-5 pl-8 items-center justify-center">
                     <button onClick={() => handleNavigationAndScroll("top")}>
                         <Image src="/bridgeQAIcon.webp" alt="icon" className="w-full h-[40px] object-cover" width={0} height={0} sizes="100vw" priority/>
                     </button>
@@ -110,7 +110,7 @@ const NavBar = () => {
                     <div className="flex-1" />
                     <button
                         onClick={toggleMenu}
-                        className="mr-auto h-10 text-secondary pr-16"
+                        className="mr-auto h-10 text-secondary pr-8"
                     >
                         {isMenuOpen ? <MdClose size={24} /> : <FiMenu size={24} />}
                     </button>

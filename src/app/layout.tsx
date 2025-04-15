@@ -16,7 +16,6 @@ declare global {
   }
 }
 
-
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
@@ -34,7 +33,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
     <html lang="en">
       <head>
         <Script
@@ -42,13 +40,11 @@ export default function RootLayout({
           src="https://cdn-cookieyes.com/client_data/006bb7c873f4615cc04aecd6/script.js"
           strategy="beforeInteractive"
         />
-
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-KQQNCERCDH"
           strategy="afterInteractive"
         />
-
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -61,7 +57,6 @@ export default function RootLayout({
       `,
           }}
         />
-
         <Script
           id="gtm-init"
           strategy="afterInteractive"
@@ -75,18 +70,12 @@ export default function RootLayout({
     `,
           }}
         />
-
       </head>
-
-      <body
-        className={`${inter.variable} ${montserrat.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS9HZN3P" height="0" width="0" style={{ display: "none", visibility: "hidden" }}>
           </iframe>
         </noscript>
-
-        {/* <Amplitude /> */}
         {children}
       </body>
     </html>

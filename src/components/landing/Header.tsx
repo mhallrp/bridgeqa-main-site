@@ -8,28 +8,28 @@ const Header = () => {
     const [showOverlay, setShowOverlay] = useState(false);
 
     return (
-        <div className="flex w-full justify-center text-center mt-24">
+        <div className="flex w-full justify-center text-center mt-8 sm:mt-24">
             <div className="">
 
                 {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
-                <div className="flex flex-row justify-between items-center">
-                    <div className="w-[35.86%]">
-                        <h1 className="font-montserrat font-black text-5xl leading-[60px] text-left pb-2.5 bg-gradient-to-r from-[#0090FF] via-[#7D00FF] to-[#A600FF] bg-clip-text text-transparent">
+                <div className="flex flex-col sm:flex-row gap-8 sm:gap-0 justify-between items-center">
+                    <div className=" sm:w-[35.86%]">
+                        <h1 className="font-montserrat font-black text-4xl sm:text-5xl sm:leading-[60px] sm:text-left pb-2.5 bg-gradient-to-r from-[#0090FF] via-[#7D00FF] to-[#A600FF] bg-clip-text text-transparent">
                             Simplify Your Design Handoff
                         </h1>
-                        <h2 className="text-left text-3xl font-montserrat font-bold mb-2.5">
+                        <h2 className="sm:text-left text-2xl sm:text-3xl font-montserrat font-bold mb-2.5">
                             No More Switching Between Figma, Live Sites, and Random Docs
                         </h2>
 
-                        <p className="text-light font-semibold text-left">
+                        <p className="text-light font-semibold sm:text-left">
                             Compare Figma designs with the live site, leave feedback on the spot, and track every request.
                         </p>
 
-                        <p className="text-light font-bold text-left mt-2.5 mb-5">
+                        <p className="text-light font-bold sm:text-left mt-2.5 mb-5">
                             Finally, a single source of truth for design handoff.
                         </p>
 
-                        <div className="flex flex-row content-center justify-left gap-6 ">
+                        <div className="flex flex-row content-center justify-center sm:justify-left gap-3 sm:gap-6 ">
                             <a href="mailto:info@bridgeqa.com">
                                 <button className="px-6 py-2 font-semibold border-2 text-sm border-bridgeBlue rounded box-border cursor-pointer">
                                     Get in touch
@@ -41,7 +41,7 @@ const Header = () => {
                         </div>
                     </div>
 
-                    <div className="flex w-[50.99%] h-full">
+                    <div className="flex w-full sm:w-[50.99%] h-full">
                         <Image src="/landingHeader.webp" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw" priority/>
                     </div>
 
