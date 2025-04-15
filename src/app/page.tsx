@@ -42,15 +42,15 @@ export default function Home() {
       <main className="overflow-hidden">
         <NavBar />
 
-        <section className="max-w-7xl pt-20 sm:px-8 mx-auto" id="top">
+        <section className="max-w-7xl pt-20 px-2 sm:px-8 mx-auto" id="top">
           <Header />
         </section>
 
-        <section className="max-w-7xl sm:px-8 sm:pb-24 pt-16 sm:pt-48 mx-auto" id="sectionone">
+        <section className="max-w-7xl px-2 sm:px-8 sm:pb-24 pt-16 sm:pt-48 mx-auto" id="sectionone">
           <LandingSectionOne />
         </section>
 
-        <section className="max-w-7xl sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-48 mx-auto" id="sectiontwo">
+        <section className="max-w-7xl px-2 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-48 mx-auto" id="sectiontwo">
           <LandingSectionTwo />
         </section>
 
@@ -58,7 +58,7 @@ export default function Home() {
           <LandingBannerSection />
         </section>
 
-        <section className="max-w-7xl sm:px-8 py-24 mx-auto" id="sectionthree">
+        <section className="max-w-7xl px-2 sm:px-8 py-24 mx-auto" id="sectionthree">
           <LandingSectionThree />
         </section>
 
