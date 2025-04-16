@@ -1,11 +1,12 @@
-// app/api/blog/[slug]/route.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NextRequest } from 'next/server';
 
 export async function GET(
   req: NextRequest,
-  context: { params: Record<string, string> }
+  { params }: { params: any }
 ) {
-  const slug = context.params.slug;
+  const slug = params.slug as string;
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/blog/${slug}`, {
     headers: {

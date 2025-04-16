@@ -1,6 +1,6 @@
 import BlogHeader from "@/components/blogPage/blogHeader";
 import BlogSection from "@/components/blogPage/blogSection";
-// import BlogTest from "@/components/blogPage/blogTest";
+import BlogTest from "@/components/blogPage/blogTest";
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
@@ -20,7 +20,7 @@ export default function Blog(){
 
         <section id="blogSection">
           <BlogSection />
-          {/* <BlogTest /> */}
+          <BlogTest />
         </section>
 
         <section id="footer">

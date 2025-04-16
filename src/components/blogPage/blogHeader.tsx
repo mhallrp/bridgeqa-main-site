@@ -1,5 +1,3 @@
-
-
 const BlogHeader = () => {
     return (
         <div className="flex py-24 justify-between items-center">
