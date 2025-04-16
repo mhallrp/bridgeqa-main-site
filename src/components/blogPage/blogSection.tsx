@@ -1,16 +1,16 @@
 
-import ReactMarkdown from "react-markdown"
+// import ReactMarkdown from "react-markdown"
 
 const BlogSection = () => {
-    const markdown = `
-# Blog Title (H1)
-Some intro text under the title.
-## Section Heading (H2)
-This is a paragraph under an H2 heading. Here’s some **bold** text and a [link](https://example.com).
-This is a paragraph under an H2 heading. Here’s some **bold** text and a [link](https://example.com).
-- List item 1
-- List item 2
-`
+//     const markdown = `
+// # Blog Title (H1)
+// Some intro text under the title.
+// ## Section Heading (H2)
+// This is a paragraph under an H2 heading. Here’s some **bold** text and a [link](https://example.com).
+// This is a paragraph under an H2 heading. Here’s some **bold** text and a [link](https://example.com).
+// - List item 1
+// - List item 2
+// `
 
     return (
         <div className="p-4">
