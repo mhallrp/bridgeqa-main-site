@@ -11,11 +11,10 @@ import Overlay from "../overlay";
 const NavBar = () => {
 
     const router = useRouter();
-    const pathname = usePathname(); // Get current path
+    const pathname = usePathname();
     const menuRef = useRef<HTMLDivElement>(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Scroll to the section with or without navigation
     const handleNavigationAndScroll = async (sectionId: string) => {
         if (pathname !== "/") {
             router.push("/");
@@ -91,6 +90,11 @@ const NavBar = () => {
                         <Link href="/who-its-for">
                             <button >
                                 <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
+                            </button>
+                        </Link>
+                        <Link href="/blog">
+                            <button >
+                                <span className="text-sm font-bold cursor-pointer">Blog</span>
                             </button>
                         </Link>
                         <button className="bg-bridgeBlue py-2 px-6 rounded cursor-pointer" onClick={() => setShowOverlay(true)}>

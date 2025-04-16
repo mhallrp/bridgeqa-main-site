@@ -10,7 +10,6 @@ const Header = () => {
     return (
         <div className="flex w-full justify-center text-center mt-8 sm:mt-24">
             <div className="">
-
                 {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
                 <div className="flex flex-col sm:flex-row gap-8 sm:gap-0 justify-between items-center">
                     <div className=" sm:w-[35.86%]">
@@ -29,7 +28,7 @@ const Header = () => {
                             Finally, a single source of truth for design handoff.
                         </p>
 
-                        <div className="flex flex-row content-center justify-center sm:justify-left gap-3 sm:gap-6 ">
+                        <div className="flex flex-row content-center justify-center sm:justify-start gap-3 sm:gap-6 ">
                             <a href="mailto:info@bridgeqa.com">
                                 <button className="px-6 py-2 font-semibold border-2 text-sm border-bridgeBlue rounded box-border cursor-pointer">
                                     Get in touch
@@ -40,30 +39,23 @@ const Header = () => {
                             </button>
                         </div>
                     </div>
-
                     <div className="flex w-full sm:w-[50.99%] h-full">
                         <Image src="/landingHeader.webp" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw" priority/>
                     </div>
-
                 </div>
-
                 <div className="flex flex-wrap justify-center gap-5 text-sm font-semibold mt-10 px-8">
                     <p className="px-4 py-2 text-white bg-[linear-gradient(to_right,_#0090FF_0%,_#7D00FF_86%,_#A600FF_100%)] rounded-lg">
                         🎯 Compare Figma & Live Site Instantly
                     </p>
-
                     <p className="px-4 py-2 text-white bg-[linear-gradient(to_right,_#0090FF_0%,_#7D00FF_86%,_#A600FF_100%)] rounded-lg">
                         ⚡ Leave Feedback Directly on the Page
                     </p>
-
                     <p className="px-4 py-2 text-white bg-[linear-gradient(to_right,_#0090FF_0%,_#7D00FF_86%,_#A600FF_100%)] rounded-lg">
                         📝 Request Changes & Track Fixes
                     </p>
-
                     <p className="px-4 py-2 text-white bg-[linear-gradient(to_right,_#0090FF_0%,_#7D00FF_86%,_#A600FF_100%)] rounded-lg">
                         ✅ One Source of Truth for Design QA
                     </p>
-
                     <p className="px-4 py-2 text-white bg-[linear-gradient(to_right,_#0090FF_0%,_#7D00FF_86%,_#A600FF_100%)] rounded-lg">
                         🌐 All Inside Your Browser
                     </p>

@@ -5,7 +5,6 @@ import HowHeader from "@/components/howPage/howHeader";
 import HowSectionOne from "@/components/howPage/HowSectionOne";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
-import Script from "next/script";
 
 // ✅ SEO and social meta info
 export const metadata = {
@@ -38,36 +37,10 @@ export const metadata = {
 
 export default function HowItWorks() {
   return (
-    <>
-      {/* ✅ 1. Load the Amplitude SDK from CDN */}
-      <Script
-        src="https://cdn.amplitude.com/libs/analytics-browser-1.0.0-min.js"
-        strategy="afterInteractive"
-      />
-
-      {/* ✅ 2. Initialize after load */}
-      <Script id="amplitude-init" strategy="afterInteractive">
-        {`
-          if (window.amplitude && (window.location.hostname === 'bridgeqa.com' || window.location.hostname === 'www.bridgeqa.com')) {
-            const plugin = window.amplitude.sessionReplay?.plugin?.({ sampleRate: 1 });
-            if (plugin) {
-              window.amplitude.add(plugin);
-            }
-            window.amplitude.init('5a9a1de1c5239a1a61661853b6457b75', {
-              defaultTracking: {
-                sessions: true,
-                pageViews: true,
-                formInteractions: true,
-              }
-            });
-          }
-        `}
-      </Script>
-
       <main className="overflow-hidden">
         <NavBar />
 
-        <section className="max-w-7xl pt-20 px-8 mx-auto" id="top">
+        <section className="max-w-7xl pt-20 px-2 sm:px-8 mx-auto" id="top">
           <HowHeader />
         </section>
 
@@ -75,7 +48,7 @@ export default function HowItWorks() {
           <SmallBanner />
         </section>
 
-        <section className="max-w-7xl py-24 px-8 mx-auto">
+        <section className="max-w-7xl py-24 px-2 sm:px-8 mx-auto">
           <HowSectionOne />
         </section>
 
@@ -83,6 +56,5 @@ export default function HowItWorks() {
           <Footer />
         </section>
       </main>
-    </>
   );
 }
