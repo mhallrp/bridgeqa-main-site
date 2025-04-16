@@ -16,17 +16,17 @@ This is a paragraph under an H2 heading. Here’s some **bold** text and a [link
         <div className="p-4">
             <ReactMarkdown
                 components={{
-                    h1: ({ node, ...props }) => (
+                    h1: ({  ...props }) => (
                         <h1 className="text-4xl font-bold text-blue-700 mb-4" {...props} />
                     ),
-                    h2: ({ node, ...props }) => (
+                    h2: ({  ...props }) => (
                         <h2 className="text-2xl font-semibold text-purple-700 mt-6 mb-3" {...props} />
                     ),
 
-                    li: ({ node, ...props }) => (
+                    li: ({ ...props }) => (
                         <li className="ml-6 list-disc text-gray-600 mb-1" {...props} />
                     ),
-                    a: ({ node, ...props }) => (
+                    a: ({  ...props }) => (
                         <a className="text-blue-500 underline hover:text-blue-700" {...props} />
                     ),
                     strong: ({ node, ...props }) => (
