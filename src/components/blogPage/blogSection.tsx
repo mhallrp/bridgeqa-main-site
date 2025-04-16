@@ -1,4 +1,4 @@
-import React from "react"
+
 import ReactMarkdown from "react-markdown"
 
 const BlogSection = () => {
@@ -14,7 +14,7 @@ This is a paragraph under an H2 heading. Here’s some **bold** text and a [link
 
     return (
         <div className="p-4">
-            <ReactMarkdown
+            {/* <ReactMarkdown
                 components={{
                     h1: ({ node, ...props }) => (
                         <h1 className="text-4xl font-bold text-blue-700 mb-4" {...props} />
@@ -35,7 +35,7 @@ This is a paragraph under an H2 heading. Here’s some **bold** text and a [link
                 }}
             >
                 {markdown}
-            </ReactMarkdown>
+            </ReactMarkdown> */}
 
             <h1 className="text-4xl font-black text-red-600 mt-8">H1 test</h1>
         </div>
