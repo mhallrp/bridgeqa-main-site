@@ -19,7 +19,7 @@ export default function Blog(){
         </section>
 
         <section id="blogSection">
-          {/* <BlogSection /> */}
+          <BlogSection />
           <BlogTest />
         </section>
 
