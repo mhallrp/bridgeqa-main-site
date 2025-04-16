@@ -29,7 +29,7 @@ This is a paragraph under an H2 heading. Here’s some **bold** text and a [link
                     a: ({  ...props }) => (
                         <a className="text-blue-500 underline hover:text-blue-700" {...props} />
                     ),
-                    strong: ({ node, ...props }) => (
+                    strong: ({ ...props }) => (
                         <strong className="font-bold text-black" {...props} />
                     )
                 }}
