@@ -3,9 +3,9 @@ import { NextRequest } from 'next/server';
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: Record<string, string> }
 ) {
-  const { slug } = params;
+  const slug = context.params.slug;
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/blog/${slug}`, {
     headers: {
