@@ -1,15 +1,9 @@
 // app/api/blog/[slug]/route.ts
 import { NextRequest } from 'next/server';
 
-type Context = {
-  params: {
-    slug: string;
-  };
-};
-
 export async function GET(
   req: NextRequest,
-  { params }: Context
+  { params }: { params: { slug: string } }
 ) {
   const { slug } = params;
 
@@ -17,7 +11,7 @@ export async function GET(
     headers: {
       'x-blog-secret': process.env.BLOG_API_SECRET || '',
     },
-    cache: 'no-store', // prevent Next.js from caching the fetch response
+    cache: 'no-store',
   });
 
   if (!res.ok) {
