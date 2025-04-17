@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import Markdown from 'react-markdown';
+import remarkBreaks from 'remark-breaks';
+
 
 type BlogPost = {
   slug: string;
@@ -35,12 +38,16 @@ export default function BlogPostPage() {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+      <div className="prose">
+        <div>
+          <Markdown remarkPlugins={[remarkBreaks]}>
+            {post.body.replace(/\n/gi, "&nbsp; \n")}
+          </Markdown>
+        </div>
+      </div>
       <p className="text-sm text-gray-500 mb-6">
         Published on {post.date}
       </p>
-      <div className="prose">
-        <div>{post.body}</div>
-      </div>
     </div>
   );
 }

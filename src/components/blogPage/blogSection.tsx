@@ -1,45 +1,102 @@
-
-import ReactMarkdown from "react-markdown"
+'use client'
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const BlogSection = () => {
-    const markdown = `
-# Blog Title (H1)
-Some intro text under the title.
-## Section Heading (H2)
-This is a paragraph under an H2 heading. Here’s some **bold** text and a [link](https://example.com).
-This is a paragraph under an H2 heading. Here’s some **bold** text and a [link](https://example.com).
-- List item 1
-- List item 2
-`
+    interface BlogCard {
+        slug: string;
+        title: string;
+        summary: string;
+        tags: string;
+        date: string;
+    }
+
+    const [data, setData] = useState<BlogCard[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [tags, setTags] = useState<string[]>([]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const res = await fetch('api/blog');
+                const json: BlogCard[] = await res.json();
+                setData(json);
+
+                // Extract and flatten all tags into an array
+                const allTags = json
+                    .flatMap((post: BlogCard) => post.tags.split(','))
+                    .map((tag: string) => tag.trim()) // clean whitespace
+                    .filter((tag: any) => tag); // remove empty strings
+
+                // Optional: get unique tags only
+                const uniqueTags = Array.from(new Set(allTags));
+
+                setTags(uniqueTags);
+            } catch (err) {
+                console.error("Failed to load blog posts:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchPosts();
+    }, []);
 
     return (
-        <div className="p-4">
-            <ReactMarkdown
-                components={{
-                    h1: ({  ...props }) => (
-                        <h1 className="text-4xl font-bold text-blue-700 mb-4" {...props} />
-                    ),
-                    h2: ({  ...props }) => (
-                        <h2 className="text-2xl font-semibold text-purple-700 mt-6 mb-3" {...props} />
-                    ),
+        <div>
+            {loading ? (
+                <p className="w-full justify-center text-center">Loading...</p>
+            ) : (
+                <div className="flex justify-between">
+                    <div className="flex flex-col gap-24 w-[59.21%]">
+                        {data.map((post) => (
 
-                    li: ({ ...props }) => (
-                        <li className="ml-6 list-disc text-gray-600 mb-1" {...props} />
-                    ),
-                    a: ({  ...props }) => (
-                        <a className="text-blue-500 underline hover:text-blue-700" {...props} />
-                    ),
-                    strong: ({ ...props }) => (
-                        <strong className="font-bold text-black" {...props} />
-                    )
-                }}
-            >
-                {markdown}
-            </ReactMarkdown>
+                            <Link href={`/blog/${post.slug}`}>
+                                <div key={post.slug}>
+                                    <h2 className="text-2xl font-black font-montserrat">{post.title}</h2>
+                                    <p className="text-sm py-4">{post.summary}</p>
+                                    <div className="flex flex-row justify-between content-between">
+                                        <div className="flex gap-1 text-white">
+                                            <p className="text-base content-center">
+                                                🏅
+                                            </p>
+                                            {tags.map((tag) => [
+                                                tag != "Intermediate" && tag != "Beginner" && tag != "Advanced" ? (
+                                                    <p key={post.slug} className="text-sm bg-bridgeBlue content-center px-2 py-0.5 rounded">
+                                                        {tag}
+                                                    </p>
+                                                ) : null
+                                            ])}
+                                            <p className="text-base content-center">
+                                                🎯
+                                            </p>
+                                            {tags.map((tag) => [
+                                                tag == "Intermediate" || tag == "Beginner" || tag == "Advanced" ? (
+                                                    <p key={post.slug} className="text-sm bg-bridgeBlue content-center px-2 py-0.5 rounded">
+                                                        {tag}
+                                                    </p>
+                                                ) : null
+                                            ])}
+                                        </div>
+                                        <div className="flex gap-1">
+                                            <p>
+                                                🗓️
+                                            </p>
+                                            <p className="text-sm">
+                                                {post.date}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                    <div className="flex w-1/2 bg-red-500 w-[32.89%]">
 
-            <h1 className="text-4xl font-black text-red-600 mt-8">H1 test</h1>
+                    </div>
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default BlogSection
+export default BlogSection;
