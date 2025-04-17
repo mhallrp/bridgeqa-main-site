@@ -39,8 +39,8 @@ const BlogSection = () => {
                         {data.map((post) => {
                             const postTags = post.tags.split(',').map((tag) => tag.trim());
                             return (
-                                <div>
-                                    <Link href={`/blog/${post.slug}`} key={post.slug}>
+                                <div key={post.slug}> 
+                                    <Link href={`/blog/${post.slug}`}>
                                         <h2 className="text-2xl font-black font-montserrat">{post.title}</h2>
                                         <p className="text-sm py-4">{post.summary}</p>
                                     </Link>
