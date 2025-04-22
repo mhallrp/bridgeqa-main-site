@@ -3,9 +3,10 @@ import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Metadata } from 'next';
 
+// BlogPost type
 type BlogPost = {
   slug: string;
   title: string;
@@ -13,24 +14,49 @@ type BlogPost = {
   summary: string;
 };
 
+// Shared props type
+type Props = {
+  params: { slug: string };
+};
+
 // Shared fetch function
 const fetchPost = async (slug: string): Promise<BlogPost> => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${slug}`, {
-    next: { revalidate: 60 },
+    next: { revalidate: 60 }, // Caches for 60 seconds
   });
+
   if (!res.ok) throw new Error("Not found");
+
   return res.json();
 };
 
-// Use proper Next.js types here
-export async function generateMetadata(
-  { params }: { params: { slug: string } },
-): Promise<Metadata> {
+// Metadata generation
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const post = await fetchPost(params.slug);
     return {
       title: `${post.title} – BridgeQA Blog`,
       description: post.summary,
+      openGraph: {
+        title: `${post.title} – BridgeQA Blog`,
+        description: post.summary,
+        url: `https://www.bridgeqa.com/blog/${params.slug}`,
+        siteName: "BridgeQA",
+        images: [
+          {
+            url: "https://www.bridgeqa.com/bridgeqa-blog-OG.webp",
+            width: 1200,
+            height: 630,
+          },
+        ],
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${post.title} – BridgeQA Blog`,
+        description: post.summary,
+        images: ["https://www.bridgeqa.com/bridgeqa-blog-OG.webp"],
+      },
     };
   } catch {
     return {
@@ -40,11 +66,8 @@ export async function generateMetadata(
   }
 }
 
-export default async function BlogSlug({
-  params,
-}: {
-  params: { slug: string };
-}) {
+// Page component
+export default async function BlogSlug({ params }: Props) {
   let post: BlogPost;
   try {
     post = await fetchPost(params.slug);
