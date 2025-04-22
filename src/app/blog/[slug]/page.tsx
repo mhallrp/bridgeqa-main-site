@@ -1,29 +1,22 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
 import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-// BlogPost type
 type BlogPost = {
+
   slug: string;
   title: string;
   body: string;
   summary: string;
 };
 
-// Shared props type
-type Props = {
-  params: { slug: string };
-};
-
-// Shared fetch function
 const fetchPost = async (slug: string): Promise<BlogPost> => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${slug}`, {
-    next: { revalidate: 60 }, // Caches for 60 seconds
+    // ✅ Cache the result for 60 seconds
+    next: { revalidate: 60 }, // Adjust as needed or use 'no-store' for always fresh
   });
 
   if (!res.ok) throw new Error("Not found");
@@ -31,10 +24,10 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
   return res.json();
 };
 
-//"@ts-expect-error"
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: any } }) {
   try {
     const post = await fetchPost(params.slug);
+
     return {
       title: `${post.title} – BridgeQA Blog`,
       description: post.summary,
@@ -60,6 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     };
   } catch {
+    // If not found or error, fallback metadata
     return {
       title: "BridgeQA Blog",
       description: "Explore insights on design QA and development workflows.",
@@ -67,8 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-// Page component
-export default async function BlogSlug({ params }: Props) {
+export default async function BlogSlug({ params }: { params: { slug: any } }) {
   let post: BlogPost;
   try {
     post = await fetchPost(params.slug);
