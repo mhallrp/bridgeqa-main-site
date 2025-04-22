@@ -11,8 +11,41 @@ const BlogSection = () => {
         date: string;
     }
 
+    const [email, setEmail] = useState("");
     const [data, setData] = useState<BlogCard[]>([]);
     const [loading, setLoading] = useState(true);
+
+    const [success, setSuccess] = useState(false);
+const [error, setError] = useState("");
+
+const isValidEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+const handleMailingListSignup = async () => {
+    setSuccess(false);
+    setError("");
+
+    try {
+        const res = await fetch("/api/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ type: "mailingList", email }),
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+            setSuccess(true);
+            setEmail(""); // Clear input
+        } else {
+            setError(result.message || "Failed to subscribe.");
+        }
+    } catch (err) {
+        console.error("Mailing list signup error:", err);
+        setError("Unexpected error occurred.");
+    }
+};
+
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -39,7 +72,7 @@ const BlogSection = () => {
                         {data.map((post) => {
                             const postTags = post.tags.split(',').map((tag) => tag.trim());
                             return (
-                                <div key={post.slug}> 
+                                <div key={post.slug}>
                                     <Link href={`/blog/${post.slug}`}>
                                         <h2 className="text-2xl font-black font-montserrat">{post.title}</h2>
                                         <p className="text-sm py-4">{post.summary}</p>
@@ -57,7 +90,7 @@ const BlogSection = () => {
                                                     </p>
                                                 ) : null
                                             )}
-                                            <p className="text-base content-center">🎯</p>
+                                            <p className="text-base content-center ml-1">🎯</p>
                                             {postTags.map((tag) =>
                                                 tag === "Intermediate" || tag === "Beginner" || tag === "Advanced" ? (
                                                     <p
@@ -78,7 +111,36 @@ const BlogSection = () => {
                             );
                         })}
                     </div>
-                    <div className="flex w-1/2 bg-red-500 w-[32.89%]">
+                    <div className="flex flex-col w-[32.89%]">
+                        <h2 className="text-2xl font-black font-montserrat">
+                            📪 Stay Ahead of the Curve
+                        </h2>
+                        <p className="font-semibold my-4">
+                            Subscribe for exclusive Design QA insights, automation trends, and expert tips straight to your inbox.
+                        </p>
+                        <input
+                            className="border py-2 px-3 rounded mb-4"
+                            placeholder="Enter your email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+
+                        <div className="flex flex-col gap-2">
+                            <button
+                                className={`bg-bridgeBlue text-white w-auto self-start cursor-pointer rounded text-sm font-semibold py-2 px-6 
+        ${!isValidEmail(email) ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                disabled={!isValidEmail(email)}
+                                onClick={handleMailingListSignup}
+                            >
+                                Sign up
+                            </button>
+                            {success && (
+                                <p className="text-green-600 text-sm">✅ Successfully subscribed!</p>
+                            )}
+                            {error && (
+                                <p className="text-red-600 text-sm">❌ {error}</p>
+                            )}
+                        </div>
 
                     </div>
                 </div>
