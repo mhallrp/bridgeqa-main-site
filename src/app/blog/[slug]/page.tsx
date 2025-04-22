@@ -4,7 +4,7 @@
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
-// import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 
 type BlogPost = {
   slug: string;
@@ -59,14 +59,14 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
 //   }
 // }
 
-// export default async function BlogSlug({ params }: { params: { slug: string } }) {
-//   let post: BlogPost;
-//   try {
-//     post = await fetchPost(params.slug);
-//   } catch {
-//     notFound();
-//   }
-export default function BlogSlug(){
+export default async function BlogSlug({ params }: { params: { slug: string } }) {
+  let post: BlogPost;
+  try {
+    post = await fetchPost(params.slug);
+  } catch {
+    notFound();
+  }
+// export default function BlogSlug(){
   return (
     <main className="overflow-hidden">
       <NavBar />
