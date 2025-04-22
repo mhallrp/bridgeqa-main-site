@@ -1,5 +1,5 @@
 import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
-// import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
+import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
@@ -74,7 +74,7 @@ export default async function BlogSlug(
     post = await fetchPost(slug);
   } catch {
     console.log("Not found")
-    return(
+    return (
       <div>
         Page not found
       </div>
@@ -85,13 +85,13 @@ export default async function BlogSlug(
     <main className="overflow-hidden">
       <NavBar />
       <section className="max-w-7xl pt-20 px-2 sm:px-8 mx-auto" id="top">
-        <BlogSlugHeader post={ post } />
+        <BlogSlugHeader post={post} />
       </section>
       <section id="smallBanner">
         <SmallBanner />
       </section>
       <section id="blogSection" className="max-w-7xl py-24 px-2 sm:px-8 mx-auto">
-        {/* <BlogSlugBody post={post} /> */}
+        <BlogSlugBody post={post} />
       </section>
       <section id="footer">
         <Footer />
