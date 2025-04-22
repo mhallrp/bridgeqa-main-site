@@ -67,7 +67,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Page component
-export default async function BlogSlug({ params }: Props) {
+export default async function BlogSlug({ params }: { params: Record<string, string> }) {
+
   let post: BlogPost;
   try {
     post = await fetchPost(params.slug);
