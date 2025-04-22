@@ -66,7 +66,8 @@ export default async function BlogSlug({ params }: { params: { slug: string } })
   } catch {
     notFound();
   }
-// export default function BlogSlug(){
+  // export default function BlogSlug(){
+  console.log(post);
   return (
     <main className="overflow-hidden">
       <NavBar />
