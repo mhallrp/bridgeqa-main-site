@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
 // import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
 import Footer from "@/components/footer/Footer";
@@ -59,15 +58,18 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
 //   }
 // }
 
-export default async function BlogSlug({ params }: { params: { slug: string } }) {
-  let post: BlogPost;
-  try {
-    post = await fetchPost(params.slug);
-  } catch {
-    notFound();
-  }
+// export default async function BlogSlug({ params }: { params: { slug: string } }) {
+
+export default async function BlogSlug({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  // let post: BlogPost;
+  // try {
+  //   post = await fetchPost(params.slug);
+  // } catch {
+  //   notFound();
+  // }
   // export default function BlogSlug(){
-  console.log(post);
+  // console.log(post);
   return (
     <main className="overflow-hidden">
       <NavBar />
