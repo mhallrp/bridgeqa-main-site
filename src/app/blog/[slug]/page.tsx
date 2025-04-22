@@ -13,7 +13,7 @@ type BlogPost = {
 };
 
 const fetchPost = async (slug: string): Promise<BlogPost> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/blog/${slug}`, {
     next: { revalidate: 60 }, // Cache for 60 seconds
   });
 
