@@ -14,14 +14,9 @@ type BlogPost = {
   summary: string;
 };
 
-type PageProps<T> = {
-  params: T;
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
 const fetchPost = async (slug: string): Promise<BlogPost> => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${slug}`, {
-    next: { revalidate: 60 }, // Cache the result for 60 seconds
+    next: { revalidate: 60 },
   });
 
   if (!res.ok) throw new Error("Not found");
@@ -30,7 +25,7 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
 };
 
 export async function generateMetadata(
-  { params }: PageProps<{ slug: string }>
+  { params }: { params: { slug: string }; searchParams?: { [key: string]: string | string[] | undefined } }
 ): Promise<Metadata> {
   try {
     const post = await fetchPost(params.slug);
@@ -60,7 +55,6 @@ export async function generateMetadata(
       },
     };
   } catch {
-    // Fallback metadata if post not found
     return {
       title: "BridgeQA Blog",
       description: "Explore insights on design QA and development workflows.",
@@ -69,7 +63,7 @@ export async function generateMetadata(
 }
 
 export default async function BlogSlug(
-  { params }: PageProps<{ slug: string }>
+  { params }: { params: { slug: string }; searchParams?: { [key: string]: string | string[] | undefined } }
 ): Promise<JSX.Element> {
   let post: BlogPost;
   try {
