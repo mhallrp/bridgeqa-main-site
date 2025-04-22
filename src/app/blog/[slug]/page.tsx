@@ -25,7 +25,7 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
 // Use proper Next.js types here
 export async function generateMetadata(
   { params }: { params: { slug: string } },
-  parent?: ResolvingMetadata
+  _?: ResolvingMetadata
 ): Promise<Metadata> {
   try {
     const post = await fetchPost(params.slug);
