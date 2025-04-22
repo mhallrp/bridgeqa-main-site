@@ -83,13 +83,18 @@ const NavBar = () => {
                     </button>
                     <div className="flex gap-8 items-center">
                         <Link href="/how-it-works">
-                            <button >
-                                <span className="text-sm font-bold cursor-pointer">How it works</span>
+                            <button className="text-sm font-bold cursor-pointer">
+                                How it works
                             </button>
                         </Link>
                         <Link href="/who-its-for">
-                            <button >
-                                <span className="text-sm font-bold cursor-pointer">Who it&apos;s for</span>
+                            <button className="text-sm font-bold cursor-pointer">
+                                Who it&apos;s for
+                            </button>
+                        </Link>
+                        <Link href="/blog">
+                            <button className="text-sm font-bold cursor-pointer">
+                                Blog
                             </button>
                         </Link>
                         <button className="bg-bridgeBlue py-2 px-6 rounded cursor-pointer" onClick={() => setShowOverlay(true)}>
