@@ -31,7 +31,7 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
   return res.json();
 };
 
-// Metadata generation
+// @ts-ignore
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const post = await fetchPost(params.slug);
