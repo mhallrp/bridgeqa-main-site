@@ -1,9 +1,8 @@
-// import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
+import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
 // import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
-// import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { JSX } from "react";
 
@@ -68,20 +67,25 @@ export default async function BlogSlug(
 ): Promise<JSX.Element> {
   const { slug } = await params; // Await the params object
 
-  // let post: BlogPost;
+  let post: BlogPost;
 
   console.log("this is the slug " + slug)
-  // try {
-  //   post = await fetchPost(slug);
-  // } catch {
-  //   notFound();
-  // }
+  try {
+    post = await fetchPost(slug);
+  } catch {
+    console.log("Not found")
+    return(
+      <div>
+        Page not found
+      </div>
+    )
+  }
 
   return (
     <main className="overflow-hidden">
       <NavBar />
       <section className="max-w-7xl pt-20 px-2 sm:px-8 mx-auto" id="top">
-        {/* <BlogSlugHeader post={post} /> */}
+        <BlogSlugHeader post={ post } />
       </section>
       <section id="smallBanner">
         <SmallBanner />
