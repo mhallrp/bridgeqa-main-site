@@ -13,7 +13,7 @@ type BlogPost = {
 };
 
 const fetchPost = async (slug: string): Promise<BlogPost> => {
-  const res = await fetch(`api/blog/${slug}`, {
+  const res = await fetch(`https://bridgeqa.com/api/blog/${slug}`, {
     next: { revalidate: 60 }, // Cache for 60 seconds
   });
 
