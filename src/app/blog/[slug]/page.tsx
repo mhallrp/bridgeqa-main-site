@@ -4,6 +4,8 @@ import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import { JSX } from "react";
 
 type BlogPost = {
   slug: string;
@@ -12,10 +14,14 @@ type BlogPost = {
   summary: string;
 };
 
+type PageProps<T> = {
+  params: T;
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
 const fetchPost = async (slug: string): Promise<BlogPost> => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${slug}`, {
-    // ✅ Cache the result for 60 seconds
-    next: { revalidate: 60 }, // Adjust as needed or use 'no-store' for always fresh
+    next: { revalidate: 60 }, // Cache the result for 60 seconds
   });
 
   if (!res.ok) throw new Error("Not found");
@@ -23,7 +29,9 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
   return res.json();
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata(
+  { params }: PageProps<{ slug: string }>
+): Promise<Metadata> {
   try {
     const post = await fetchPost(params.slug);
 
@@ -52,7 +60,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       },
     };
   } catch {
-    // If not found or error, fallback metadata
+    // Fallback metadata if post not found
     return {
       title: "BridgeQA Blog",
       description: "Explore insights on design QA and development workflows.",
@@ -60,7 +68,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function BlogSlug({ params }: { params: { slug: string } }) {
+export default async function BlogSlug(
+  { params }: PageProps<{ slug: string }>
+): Promise<JSX.Element> {
   let post: BlogPost;
   try {
     post = await fetchPost(params.slug);
