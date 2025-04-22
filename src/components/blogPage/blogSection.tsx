@@ -14,37 +14,34 @@ const BlogSection = () => {
     const [email, setEmail] = useState("");
     const [data, setData] = useState<BlogCard[]>([]);
     const [loading, setLoading] = useState(true);
-
     const [success, setSuccess] = useState(false);
-const [error, setError] = useState("");
+    const [error, setError] = useState("");
+    const isValidEmail = (email: string) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const handleMailingListSignup = async () => {
+        setSuccess(false);
+        setError("");
 
-const isValidEmail = (email: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        try {
+            const res = await fetch("/api/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ type: "mailingList", email }),
+            });
 
-const handleMailingListSignup = async () => {
-    setSuccess(false);
-    setError("");
+            const result = await res.json();
 
-    try {
-        const res = await fetch("/api/send", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ type: "mailingList", email }),
-        });
-
-        const result = await res.json();
-
-        if (res.ok) {
-            setSuccess(true);
-            setEmail(""); // Clear input
-        } else {
-            setError(result.message || "Failed to subscribe.");
+            if (res.ok) {
+                setSuccess(true);
+                setEmail(""); // Clear input
+            } else {
+                setError(result.message || "Failed to subscribe.");
+            }
+        } catch (err) {
+            console.error("Mailing list signup error:", err);
+            setError("Unexpected error occurred.");
         }
-    } catch (err) {
-        console.error("Mailing list signup error:", err);
-        setError("Unexpected error occurred.");
-    }
-};
+    };
 
 
     useEffect(() => {
