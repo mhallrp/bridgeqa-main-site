@@ -3,13 +3,13 @@
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
-import { notFound } from "next/navigation";
+// import { notFound } from "next/navigation";
 
 type BlogPost = {
   slug: string;
-  title: string;
-  body: string;
-  summary: string;
+  // title: string;
+  // body: string;
+  // summary: string;
 };
 
 const fetchPost = async (slug: string): Promise<BlogPost> => {
@@ -62,6 +62,7 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
 
 export default async function BlogSlug({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  console.log(slug);
   // let post: BlogPost;
   // try {
   //   post = await fetchPost(params.slug);
