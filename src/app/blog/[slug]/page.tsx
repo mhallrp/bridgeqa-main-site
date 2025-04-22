@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
 // import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
 import Footer from "@/components/footer/Footer";
