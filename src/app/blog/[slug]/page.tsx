@@ -6,7 +6,6 @@ import SmallBanner from "@/components/smallBanner/smallBanner";
 import { notFound } from "next/navigation";
 
 type BlogPost = {
-
   slug: string;
   title: string;
   body: string;
@@ -24,7 +23,7 @@ const fetchPost = async (slug: string): Promise<BlogPost> => {
   return res.json();
 };
 
-export async function generateMetadata({ params }: { params: { slug: any } }) {
+export async function generateMetadata({ params }: { params: { slug: string } }) {
   try {
     const post = await fetchPost(params.slug);
 
@@ -61,7 +60,7 @@ export async function generateMetadata({ params }: { params: { slug: any } }) {
   }
 }
 
-export default async function BlogSlug({ params }: { params: { slug: any } }) {
+export default async function BlogSlug({ params }: { params: { slug: string } }) {
   let post: BlogPost;
   try {
     post = await fetchPost(params.slug);
