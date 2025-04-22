@@ -1,9 +1,9 @@
-import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
-import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
+// import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
+// import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
-import { notFound } from "next/navigation";
+// import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { JSX } from "react";
 
