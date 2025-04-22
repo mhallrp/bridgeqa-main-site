@@ -4,7 +4,7 @@ import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navBar/NavBar";
 import SmallBanner from "@/components/smallBanner/smallBanner";
 import { notFound } from "next/navigation";
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 type BlogPost = {
   slug: string;
