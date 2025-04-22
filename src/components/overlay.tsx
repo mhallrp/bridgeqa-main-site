@@ -25,7 +25,7 @@ const Overlay: React.FC<OverlayProps> = ({ onClose }) => {
             const res = await fetch("/api/send", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, role, teamSize, message }),
+                body: JSON.stringify({ type: "earlyAccess", name, email, role, teamSize, message }),
             });
 
             const result = await res.json();
