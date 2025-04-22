@@ -68,24 +68,26 @@ export default async function BlogSlug(
 ): Promise<JSX.Element> {
   const { slug } = await params; // Await the params object
 
-  let post: BlogPost;
-  try {
-    post = await fetchPost(slug);
-  } catch {
-    notFound();
-  }
+  // let post: BlogPost;
+
+  console.log(slug)
+  // try {
+  //   post = await fetchPost(slug);
+  // } catch {
+  //   notFound();
+  // }
 
   return (
     <main className="overflow-hidden">
       <NavBar />
       <section className="max-w-7xl pt-20 px-2 sm:px-8 mx-auto" id="top">
-        <BlogSlugHeader post={post} />
+        {/* <BlogSlugHeader post={post} /> */}
       </section>
       <section id="smallBanner">
         <SmallBanner />
       </section>
       <section id="blogSection" className="max-w-7xl py-24 px-2 sm:px-8 mx-auto">
-        <BlogSlugBody post={post} />
+        {/* <BlogSlugBody post={post} /> */}
       </section>
       <section id="footer">
         <Footer />
