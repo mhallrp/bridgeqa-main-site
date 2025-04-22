@@ -8,8 +8,6 @@ type Props = {
 
 const BlogSlugHeader = ({ post }: Props) => {
 
-
-
     return (
         <div className="flex py-24 justify-between items-center">
             <div className="flex flex-col h-full">
