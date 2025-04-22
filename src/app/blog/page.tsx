@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import BlogHeader from "@/components/blogPage/blogHeader";
 import BlogSection from "@/components/blogPage/blogSection";
 import Footer from "@/components/footer/Footer";
