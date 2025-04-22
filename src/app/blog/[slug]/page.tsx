@@ -70,7 +70,7 @@ export default async function BlogSlug(
 
   // let post: BlogPost;
 
-  console.log(slug)
+  console.log("this is the slug " + slug)
   // try {
   //   post = await fetchPost(slug);
   // } catch {
