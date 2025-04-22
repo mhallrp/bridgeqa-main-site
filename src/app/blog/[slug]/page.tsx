@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // import BlogSlugHeader from "@/components/blogSlugPage/blogSlugHeader";
 // import BlogSlugBody from "@/components/blogSlugPage/blogSlugBody";
 import Footer from "@/components/footer/Footer";
