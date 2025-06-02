@@ -13,13 +13,18 @@ const Footer = () => {
             <div className="flex flex-row h-full max-w-[1216px] w-full justify-between items-between text-white">
                 <div className="flex flex-col gap-2.5 font-bold w-full items-start hidden lg:flex">
                     <Link href="/how-it-works">
-                        <button>
-                            <span className="cursor-pointer">How it works</span>
+                        <button className="cursor-pointer">
+                            How it works
                         </button>
                     </Link>
                     <Link href="/who-its-for">
-                        <button>
-                            <span className="cursor-pointer">Who it&apos;s for</span>
+                        <button className="cursor-pointer">
+                            Who it&apos;s for
+                        </button>
+                    </Link>
+                    <Link href="/blog">
+                        <button className="cursor-pointer">
+                           Blog
                         </button>
                     </Link>
                     <a href="mailto:info@bridgeqa.com">
