@@ -21,7 +21,7 @@ const Header = () => {
                         </h2>
 
                         <p className="text-light font-semibold sm:text-left">
-                            Compare Figma designs with the live site, leave feedback on the spot, and track every request.
+                            Compare Figma designs directly with live web builds, leave feedback on the spot, and track every request.
                         </p>
 
                         <p className="text-light font-bold sm:text-left mt-2.5 mb-5">
