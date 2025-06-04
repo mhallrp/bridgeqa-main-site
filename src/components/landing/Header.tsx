@@ -17,7 +17,7 @@ const Header = () => {
                             Simplify Your Design Handoff
                         </h1>
                         <h2 className="sm:text-left text-2xl sm:text-[30px] font-montserrat font-bold mb-2.5">
-                            No More Switching Between Figma, Live Sites, and Random Docs
+                            No More Switching Between Figma, Live Web Builds, and Random Docs
                         </h2>
 
                         <p className="text-light font-semibold sm:text-left">
