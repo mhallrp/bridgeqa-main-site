@@ -7,7 +7,7 @@ import Script from "next/script";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "600", "900"],
+  weight: ["400", "600","700", "900"],
 });
 
 declare global {
@@ -19,7 +19,7 @@ declare global {
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "600", "900"],
+  weight: ["400", "600","700", "900"],
 });
 
 export const metadata: Metadata = {
