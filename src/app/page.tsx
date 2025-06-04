@@ -46,7 +46,7 @@ export default function Home() {
           <Header />
         </section>
 
-        <section className="max-w-7xl px-2 sm:px-8 sm:pb-24 pt-16 sm:pt-48 mx-auto" id="sectionone">
+        <section className="max-w-7xl px-2 sm:px-8 sm:pb-24 pt-16 sm:pt-14 mx-auto" id="sectionone">
           <LandingSectionOne />
         </section>
 

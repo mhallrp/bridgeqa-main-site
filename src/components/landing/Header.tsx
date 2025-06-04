@@ -8,7 +8,7 @@ const Header = () => {
     const [showOverlay, setShowOverlay] = useState(false);
 
     return (
-        <div className="flex w-full justify-center text-center mt-8 sm:mt-24">
+        <div className="flex w-full justify-center text-center mt-8 sm:mt-16">
             <div className="">
                 {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
                 <div className="flex flex-col sm:flex-row gap-8 sm:gap-0 justify-between items-center">
@@ -39,8 +39,8 @@ const Header = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex w-full sm:w-[50.99%] h-full">
-                        <Image src="/landingHeader.webp" alt="icon" className="w-full h-full object-cover" width={0} height={0} sizes="100vw" priority/>
+                    <div className="flex w-full sm:w-[60%] h-full bg-red-500">
+                        <Image src="/landingHeader.webp" alt="icon" className="w-full h-[full] object-cover" width={0} height={0} sizes="100vw" priority/>
                     </div>
                 </div>
                 <div className="flex flex-wrap justify-center gap-5 text-sm font-semibold mt-10 px-8">
