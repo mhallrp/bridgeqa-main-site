@@ -1,8 +1,8 @@
 const WhoSectionOne = () => {
     return (
-        <div className="flex flex-row justify-center gap-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-12 sm:text-left text-center">
 
-            <div className="flex flex-col gap-4 w-1/3">
+            <div className="flex flex-col gap-4 sm:w-1/3 ">
                 <h2 className="font-montserrat font-black text-2xl ">
                     👩‍🎨 Designers & UX/UI Teams
                 </h2>
@@ -29,7 +29,7 @@ const WhoSectionOne = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-4 w-1/3">
+            <div className="flex flex-col gap-4 sm:w-1/3">
                 <h2 className="font-montserrat font-black text-2xl ">
                 📊 Product Managers & QA
                 </h2>
@@ -55,7 +55,7 @@ const WhoSectionOne = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-4 w-1/3">
+            <div className="flex flex-col gap-4 sm:w-1/3">
                 <h2 className="font-montserrat font-black text-2xl ">
                 👨‍💻 Developers & Engineers
                 </h2>

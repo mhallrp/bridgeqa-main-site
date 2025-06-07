@@ -65,7 +65,7 @@ const BlogSection = () => {
                 <p className="w-full justify-center text-center">Loading...</p>
             ) : (
                 <div className="flex justify-between">
-                    <div className="flex flex-col gap-24 w-[59.21%]">
+                    <div className="flex flex-col gap-24 sm:w-[59.21%]">
                         {data.map((post) => {
                             const postTags = post.tags.split(',').map((tag) => tag.trim());
                             return (
@@ -108,7 +108,7 @@ const BlogSection = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-col w-[32.89%]">
+                    <div className="flex flex-col w-[32.89%] sm:block hidden">
                         <h2 className="text-2xl font-black font-montserrat">
                             📪 Stay Ahead of the Curve
                         </h2>

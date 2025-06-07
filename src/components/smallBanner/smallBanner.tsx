@@ -7,7 +7,7 @@ const SmallBanner = () => {
 const [showOverlay, setShowOverlay] = useState(false);
 
     return (
-        <div className=" flex flex-row w-full py-6 text-white justify-center items-center gap-8 bg-[linear-gradient(to_right,_#0090FF_0%,_#7D00FF_86%,_#A600FF_100%)]">
+        <div className=" flex sm:flex-row flex-col sm:text-left text-center w-full py-6 text-white justify-center items-center gap-8 bg-[linear-gradient(to_right,_#0090FF_0%,_#7D00FF_86%,_#A600FF_100%)]">
             {showOverlay && <Overlay onClose={() => setShowOverlay(false)} />}
             <p className="font-montserrat font-black text-lg">
             Join the early access list and be the first to try BridgeQA!
