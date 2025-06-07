@@ -16,7 +16,7 @@ const Header = () => {
                         <h1 className="font-montserrat font-black text-4xl sm:text-5xl sm:leading-[60px] sm:text-left pb-2.5 bg-gradient-to-r from-[#0090FF] via-[#7D00FF] to-[#A600FF] bg-clip-text text-transparent">
                             Simplify Your Design Handoff
                         </h1>
-                        <h2 className="sm:text-left text-2xl sm:text-[30px] font-montserrat font-bold mb-2.5">
+                        <h2 className="sm:text-left text-2xl sm:text-[30px] font-montserrat font-bold mb-2.5 leading-[37px]">
                             No More Switching Between Figma, Live Web Builds, and Random Docs
                         </h2>
 
